@@ -89,7 +89,7 @@ sample = sample + " Students";
 console.log(sample);
 sample = sample.replace("Students", "Class");
 console.log(sample)
-console.log(sample.indexOf("c")); //this does not make sense to me
+console.log(sample.indexOf("c")); //this does not make sense to me -1
 console.log(sample.indexOf("C"));
 console.log(sample.substring(sample.indexOf("C"),sample.indexOf("p") + 1));
 
