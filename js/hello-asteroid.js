@@ -21,3 +21,14 @@ console.log(greeting)
 console.log(22 / 7);
 // cuts off at 16 places
 
+let numStr = "7.99";
+let discount = .10;
+let numAmount = parseFloat(numStr)
+let discAmount = numAmount - (numAmount * discount);
+console.log(parseFloat(discAmount.toFixed(2)))
+// gives whole number
+// console.log(Math.round(discAmount));
+// parseInt always rounds down
+
+
+
