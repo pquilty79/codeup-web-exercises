@@ -17,8 +17,8 @@ var perplexed;
 // perplexed is undefined (no value is assigned)
 console.log(perplexed + 2);
 
-var price = 2.7;
-console.log(price.toFixed(2));
+var priceOne = 2.7;
+console.log(priceOne.toFixed(2));
 
 // var price = "2.7";
 // console.log(price.toFixed(2));
@@ -94,19 +94,13 @@ console.log(sample.indexOf("C"));
 console.log(sample.substring(sample.indexOf("C"),sample.indexOf("p") + 1));
 
 // exercises section 3
-var littleMermaid = 3;
-var brotherBear = 5;
-var hercules = 1;
+var littleMermaid = 3, brotherBear = 5, hercules = 1;
 var movies = [littleMermaid, brotherBear, hercules]
 var price = 3 * movies.reduce((a, b) => a + b, 0)
-console.log(price)
+console.log("$" + price)
 
-var googleWage = 400;
-var amazonWage = 380;
-var facebookWage = 350;
-var googleHours = 6;
-var amazonHours = 4;
-var facebookHours = 10;
+var googleWage = 400, amazonWage = 380, facebookWage = 350;
+var googleHours = 6, amazonHours = 4, facebookHours = 10;
 salary = (googleWage * googleHours) + (amazonWage * amazonHours) + (facebookWage * facebookHours);
 console.log("$" + salary);
 

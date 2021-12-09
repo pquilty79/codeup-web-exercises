@@ -31,4 +31,13 @@ console.log(parseFloat(discAmount.toFixed(2)))
 // parseInt always rounds down
 
 
+// falsey statement
+let userAge = "32";
+let hopefullyANumber = parseInt(userAge);
+
+if (!hopefullyANumber) {
+    console.log("That was not a valid age. Try again");
+} else {
+    console.log("Your age is " + userAge)
+}
 
