@@ -8,6 +8,12 @@
  * Example
  * > sayHello("codeup") // returns "Hello, codeup!"
  */
+function sayHello(name) {
+    return ("Hello," + name + "!");
+}
+
+console.log(sayHello("Codeup"));
+
 
 /**
  * TODO:
@@ -16,6 +22,9 @@
  *
  * console.log 'helloMessage' to check your work
  */
+var helloMessage;
+helloMessage = sayHello("Patrick");
+console.log(helloMessage)
 
 /**
  * TODO:
