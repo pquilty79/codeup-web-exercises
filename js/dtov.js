@@ -94,18 +94,18 @@ console.log(sample.indexOf("C"));
 console.log(sample.substring(sample.indexOf("C"),sample.indexOf("p") + 1));
 
 // exercises section 3
-var littleMermaid = 3, brotherBear = 5, hercules = 1;
-var movies = [littleMermaid, brotherBear, hercules]
-var price = 3 * movies.reduce((a, b) => a + b, 0)
+let littleMermaid = 3, brotherBear = 5, hercules = 1;
+let movies = [littleMermaid, brotherBear, hercules]
+let price = 3 * movies.reduce((a, b) => a + b, 0)
 console.log("$" + price)
 
-var googleWage = 400, amazonWage = 380, facebookWage = 350;
-var googleHours = 6, amazonHours = 4, facebookHours = 10;
+let googleWage = 400, amazonWage = 380, facebookWage = 350;
+let googleHours = 6, amazonHours = 4, facebookHours = 10;
 salary = (googleWage * googleHours) + (amazonWage * amazonHours) + (facebookWage * facebookHours);
 console.log("$" + salary);
 
-var isFull = false;
-var doesConflict = false;
+let isFull = false;
+let doesConflict = false;
 if ((isFull === true) || (doesConflict === true)) {
     console.log("Student Cannot Enroll");
 } else {

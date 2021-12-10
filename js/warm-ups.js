@@ -1,3 +1,6 @@
+"use strict";
+
+
 function doesQualify(creditScore, cashOnHand) {
     if (creditScore > 680 && cashOnHand >= 4000) {
         console.log("This client qualifies with good credit.");
