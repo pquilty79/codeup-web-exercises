@@ -92,14 +92,14 @@ var random = Math.floor((Math.random() * 3) + 1);
  * prompt the user for the bill total and a percentage they would like to tip,
  * then display the dollar amount they should tip
  */
-
-    (function tipMe() {
-        let percentage = parseFloat(prompt("What percentage would you like to tip?"));
-        let billTotal = parseFloat(prompt("How much is the bill?"));
-        let tip = ((percentage / 100) * billTotal);
-        tip = tip.toFixed(2);
-        alert("Your tip is $" + tip)
-    })()
+    //
+    // (function tipMe() {
+    //     let percentage = parseFloat(prompt("What percentage would you like to tip?"));
+    //     let billTotal = parseFloat(prompt("How much is the bill?"));
+    //     let tip = ((percentage / 100) * billTotal);
+    //     tip = tip.toFixed(2);
+    //     alert("Your tip is $" + tip)
+    // })();
 
 
 
@@ -117,11 +117,11 @@ var random = Math.floor((Math.random() * 3) + 1);
  *
  * > applyDiscount(45.99, 0.12) // 40.4712
  */
-// (function applyDiscount() {
-//     let price = parseFloat(prompt("What is the price?"));
-//     let discount = parseFloat(prompt("How much is the discount?"));
-//     let discountedTotal = (price * (1 - (discount/100))).toFixed(2);
-//     alert("Your discounted total is $" + discountedTotal)
-//
-// })();
+(function applyDiscount() {
+    let price = parseFloat(prompt("What is the price?"));
+    let discount = parseFloat(prompt("How much is the discount?"));
+    let discountedTotal = (price * (1 - (discount/100))).toFixed(2);
+    alert("Your discounted total is $" + discountedTotal)
+
+})();
 
