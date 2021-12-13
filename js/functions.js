@@ -122,6 +122,5 @@ var random = Math.floor((Math.random() * 3) + 1);
     let discount = parseFloat(prompt("How much is the discount?"));
     let discountedTotal = (price * (1 - (discount/100))).toFixed(2);
     alert("Your discounted total is $" + discountedTotal)
-
 })();
 
