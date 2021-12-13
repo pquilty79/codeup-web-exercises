@@ -201,22 +201,71 @@
 //         }
 //     }
 // }
-// console.log(isLowerCase('a'))
-// console.log(isLowerCase('A'))
-// console.log(isLowerCase('1'))
+// console.log(isLowerCase('a'));
+// console.log(isLowerCase('A'));
+// console.log(isLowerCase('1'));
 
 // - Make a function named `hasLowerCase(string)` that returns if a string has any
 // lower cased letter
 
+// (function hasLowerCase(string) {
+//     const lower = /[a-z]/;
+//     let isThereLower = lower.test(string);
+//         console.log(isThereLower)
+// })('DOOR');
+
 
 // - Make a function named `isSpace(letter)` that returns if a character is a space
 // character
+// (function isSpace(letter) {
+//     const space = " ";
+//     if (letter === " ") {
+//         console.log(true)
+//     } else {
+//         console.log(false)
+//     }
+//     }
+// )('f');
 // - Make a function named `isZero(number)`
+// (function isZero(number) {
+//         const zero = 0;
+//         if (number === 0) {
+//             console.log(true)
+//         } else {
+//             console.log(false)
+//         }
+//     }
+// )(0);
+
+
 // - Make a function named `notZero(input)` that returns true if the input is not
 // zero
+
+// (function notZero(number) {
+//         const zero = 0;
+//         if (number !== 0) {
+//             console.log(true)
+//         } else {
+//             console.log(false)
+//         }
+//     }
+// )(0);
 // - Write a function named `lowerCase(string)`
+(function lowerCase(string) {
+    console.log(string.toLowerCase())
+})("HI");
+
 // - Write a function named `double(n)` that returns a number times two
+(function double(n) {
+    console.log(n * 2)
+})(4);
+
 // - Write a function named `triple(n)` that returns a number times 3
+(function triple(n) {
+        console.log(n * 3)
+    })(6);
+
+
 // - Write a function named `quadruple(n)` that returns a number times 4
 // - Write a function named `half(n)` that returns 1/2 of the provided input
 // - Write a function named `subtract(a, b)` that returns `a` minus `b`
