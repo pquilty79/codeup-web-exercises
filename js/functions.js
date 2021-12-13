@@ -59,14 +59,14 @@ var random = Math.floor((Math.random() * 3) + 1);
  * number)
  */
 
-// function isTwo(number) {
+// (function isTwo(number) {
 //     if (number === 2) {
 //         console.log(true)
 //     } else {
 //         console.log(false)
 //     }
-// }
-// isTwo(random)
+// })(random);
+
 
 /**
  * TODO:
@@ -80,11 +80,11 @@ var random = Math.floor((Math.random() * 3) + 1);
  * > calculateTip(0.15, 33.42) // returns 5.013
  */
 
-// function calculateTip(percentage, billTotal) {
+// (function calculateTip(percentage, billTotal) {
 //     let tip = "The tip amount is $" + (percentage / 100) * billTotal;
 //     console.log(tip);
-// }
-// calculateTip(20, 150)
+// })(20, 150);
+
 
 /**
  * TODO:
@@ -93,15 +93,15 @@ var random = Math.floor((Math.random() * 3) + 1);
  * then display the dollar amount they should tip
  */
 
-//     function tipMe() {
-//         let percentage = parseFloat(prompt("What percentage would you like to tip?"));
-//         let billTotal = parseFloat(prompt("How much is the bill?"));
-//         let tip = ((percentage / 100) * billTotal);
-//         tip = tip.toFixed(2);
-//         alert("Your tip is $" + tip)
-//     }
-//
-// tipMe()
+    (function tipMe() {
+        let percentage = parseFloat(prompt("What percentage would you like to tip?"));
+        let billTotal = parseFloat(prompt("How much is the bill?"));
+        let tip = ((percentage / 100) * billTotal);
+        tip = tip.toFixed(2);
+        alert("Your tip is $" + tip)
+    })()
+
+
 
 /**
  * TODO:
@@ -117,12 +117,11 @@ var random = Math.floor((Math.random() * 3) + 1);
  *
  * > applyDiscount(45.99, 0.12) // 40.4712
  */
-function applyDiscount() {
-    let price = parseFloat(prompt("What is the price?"));
-    let discount = parseFloat(prompt("How much is the discount?"));
-    let discountedTotal = (price * (1 - (discount/100))).toFixed(2);
-    alert("Your discounted total is $" + discountedTotal)
+// (function applyDiscount() {
+//     let price = parseFloat(prompt("What is the price?"));
+//     let discount = parseFloat(prompt("How much is the discount?"));
+//     let discountedTotal = (price * (1 - (discount/100))).toFixed(2);
+//     alert("Your discounted total is $" + discountedTotal)
+//
+// })();
 
-}
-
-applyDiscount()
