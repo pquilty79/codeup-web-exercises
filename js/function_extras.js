@@ -1,29 +1,214 @@
 // Functions using conditionals but not loops or arrays:
 //
 // - Make a function named `isOdd(number)`
+// (function isOdd(number) {
+//     if (isNaN(number)) {
+//         alert(number + " is not a number");
+//         } else {
+//             if (number % 2 !== 0) {
+//                 alert(number + " is an odd number.")
+//             } else {
+//                 alert(number + " is an even number.")
+//             }
+//     }
+// })(3)
+
 // - Make a function named `isEven(number)`
+//     (function isEven(number) {
+//         if (isNaN(number)) {
+//             alert(number + " is not a number");
+//         } else {
+//             if (number % 2 === 0) {
+//                 alert(number + " is an even number.")
+//             } else {
+//                 alert(number + " is an odd number.")
+//             }
+//         }
+//     })(2)
+
+
 // - Make a function named `identity(input)` that returns the input exactly as
 // provided.
+// (function identity(input){
+//     return(input)
+//     }
+// )();
+
 // - Make a function named `isFive(input)`
+// (function isFive(input) {
+//    if (input === 5) {
+//        alert("This is five.")
+//    } else {
+//        alert("This is not five")
+//    }
+// })()
+
 // - Make a function named `addFive(input)` that adds five to some input.
+// (function addFive() {
+//     let input = parseFloat(prompt("Give me a number."));
+//     if (isNaN(input))  {
+//         alert("This is not a number")
+//     } else {
+//         alert(input + " + 5 = " + (input + 5))
+//     }
+//     }
+// )()
+
+
 // - Make a function named `isMultipleOfFive(input)`
+// (function isMultipleOfFive() {
+//         let input = parseFloat(prompt("Give me a number."));
+//         if (isNaN(input))  {
+//             alert("This is not a number")
+//         } else if (input % 5 === 0) {
+//             alert(input + "is a multiple of five")
+//         } else {
+//              alert(input + "is not a multiple of five")
+//     }
+// )();
+
 // - Make a function named `isThree(input)`
+// (function isThree(input) {
+//     if (input === 3)  {
+//         alert("This is 3")
+//             } else {
+//         alert("This is not 3")
+//     }
+// })(3);
+
+
 // - Make a function named `isMultipleOfThree(input)`
+// (function isMultipleOfThree() {
+//         let input = parseFloat(prompt("Give me a number."));
+//         if (isNaN(input)) {
+//             alert("This is not a number")
+//         } else if (input % 3 === 0) {
+//             alert(input + " is a multiple of three")
+//         } else {
+//             alert(input + " is not a multiple of three")
+//         }
+//     }
+// )();
+
+
+
 // - Make a function named `isMultipleOfThreeAndFive(input)`
+// (function isMultipleOfThreeAndFive() {
+//         let input = parseFloat(prompt("Give me a number."));
+//         if (isNaN(input)) {
+//             alert("This is not a number")
+//         } else if ((input % 3 === 0) && (input % 5 === 0)) {
+//             alert(input + " is a multiple of both three and five")
+//         } else {
+//             alert(input + " is not a multiple of both three and five")
+//         }
+//     }
+// )();
+
 // - Make a function named `isMultipleOf(target, n)` which checks if target is
 // evenly divisible by `n`
+// (function isMultipleOf(target, n) {
+//     let multiple = (target % n);
+//     if (multiple === 0) {
+//         console.log(target + " is a multiple of " + n);
+//     } else {
+//         console.log(target + " is not a multiple of " + n);
+//     }
+// })(20, 4)
+
 // - Make a function named `isTrue(boolean)`
+//(function isTrue(boolean) {
+//     if (boolean === true) {
+//         console.log("This is true")
+//     } else {
+//         console.log("This is not true")
+//     }
+// })(true)
+
 // - Make a function named `isFalse(boolean)`
+// (function isFalse(boolean) {
+//     if (boolean !== true) {
+//         console.log("This is false")
+//     } else {
+//         console.log("This is true")
+//     }
+// })(true)
+
 // - Make a function named `isTruthy(input)`, remember that values other than true
 // will behave like true
+//     (function isTruthy(input) {
+//         if (input !== false) {
+//             console.log("This is truthy")
+//         } else {
+//             console.log("This is false")
+//         }
+//         }
+//     )()
+
 // - Make a function named `isFalsy(input)`, remember that values other than false
 // behave like false
+
+        // (function isFalsy(input) {
+        //         if (input !== true) {
+        //             console.log("This is falsy")
+        //         } else {
+        //             console.log("This is true")
+        //         }
+        //     }
+        // )()
 // - Make a function named `isVowel(letter)`
+// (function isVowel(letter) {
+//     const vowels = ["a", "e", "i", "o", "u"];
+//     console.log(vowels.includes(letter))
+//
+// })("z")
+
 // - Make a function named `isConsonant(letter)`
+//     (function isConsonant(letter) {
+//         const vowels = ["a", "e", "i", "o", "u"];
+//         console.log(!vowels.includes(letter))
+//     })("a")
+
 // - Make a function named `isCapital(letter)`
+// function isCapital(letter) {
+//     if (!isNaN(letter * 1)){
+//         return 'This is numeric';
+//     }
+//     else {
+//         if (letter === letter.toUpperCase()) {
+//             return 'upper case';
+//         }
+//         if (letter === letter.toLowerCase()){
+//             return 'lower case';
+//         }
+//     }
+// }
+// console.log(isCapital('a'))
+// console.log(isCapital('A'))
+// console.log(isCapital('1'))
+
 // - Make a function named `isLowerCase(letter)`
+// function isLowerCase(letter) {
+//     if (!isNaN(letter * 1)){
+//         return 'This is numeric';
+//     }
+//     else {
+//         if (letter === letter.toUpperCase()) {
+//             return 'upper case';
+//         }
+//         if (letter === letter.toLowerCase()){
+//             return 'lower case';
+//         }
+//     }
+// }
+// console.log(isLowerCase('a'))
+// console.log(isLowerCase('A'))
+// console.log(isLowerCase('1'))
+
 // - Make a function named `hasLowerCase(string)` that returns if a string has any
 // lower cased letter
+
+
 // - Make a function named `isSpace(letter)` that returns if a character is a space
 // character
 // - Make a function named `isZero(number)`
@@ -47,7 +232,7 @@
 // input
 // - Write a function named `cubeRoot(n)` that returns the cube root of the input
 // - Write a function named `invertSign(number)` that returns a negative version of
-// a postive number, a positve version of negative, and false for all else.
+// a positive number, a positive version of negative, and false for all else.
 // - Write a function named `degreesToRadians(number)`
 // - Write a function named `radiansToDegrees(number)`
 // - Make a function named `isBlank(input)` that determines if a given input is
