@@ -579,26 +579,26 @@ function square(a) {
 // first parameter is the name of the math function you want to apply. a and b
 // are the two numbers to run that function on.
 
-function doMath(operator, a, b) {
-   switch (operator) {
-      case "+":
-         console.log(add(a,b));
-         break;
-      case "-":
-         console.log(subtract(a, b));
-         break;
-      case "*":
-         console.log(multiply(a, b));
-         break;
-      case "/":
-         console.log(divide(a, b));
-         break;
-      default:
-         console.log("Please pick one of the following operators: + - * '/'");
-   }
-}
-
-doMath("/", 3, 8)
+// function doMath(operator, a, b) {
+//    switch (operator) {
+//       case "+":
+//          console.log(add(a,b));
+//          break;
+//       case "-":
+//          console.log(subtract(a, b));
+//          break;
+//       case "*":
+//          console.log(multiply(a, b));
+//          break;
+//       case "/":
+//          console.log(divide(a, b));
+//          break;
+//       default:
+//          console.log("Please pick one of the following operators: + - * '/'");
+//    }
+// }
+//
+// doMath("/", 3, 8)
 
 
 //
@@ -606,6 +606,15 @@ doMath("/", 3, 8)
 //
 // 1. Create a function that will return how many whitespace characters are at the
 // beginning and end of a string.
+
+(function numberOfWhitespace(input) {
+   if (/\s/.test(input)) {
+      var my_string = input;
+      var spaceCount = (my_string.split(" ").length - 1);
+      console.log(spaceCount)
+   }
+})("   wi n  ")
+
 //
 // 1. Create a function that takes in two string inputs.
 //
@@ -616,12 +625,29 @@ doMath("/", 3, 8)
 // string.
 // - If the second string input is not present in the first, return the first
 // string as entered in the function.
-//
+
+
+
+
 // 1. Create a function that takes in a string and returns true if the last letter
 // is an "a" (otherwise, return false).
+function lastIsA(string){
+   let lastLetter = string.split().pop();
+   if (lastLetter === "a" || "A") {
+      console.log(true)
+   } else {
+      console.log(false)
+   }
+}
+lastIsA("NOLa")
+
 //
 // 1. EXTRA CHALLENGE: create a function that will return how many whitespace
 // characters are at the beginning of a string (hint: use regex).
+function howManyWhiteSp(string) {
+   console.log(string.match(/^\s+/)[0].length)
+}
+howManyWhiteSp("    does this work?")
 //
 // 1. Create a function `returnTrueMessage()` that returns the string "Hey, it's true!"
 //
