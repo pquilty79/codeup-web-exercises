@@ -426,38 +426,60 @@
 // 1. Make a function called returnTwo() that returns the number 2 when called
 //
 // Test this function with `console.log(returnTwo())`
-function returnTwo() {
-   return 2
-};
-console.log(returnTwo())
+// function returnTwo() {
+//    return 2
+// };
+// console.log(returnTwo())
 
-//
 //     1. Make a function called sayHowdy() which console.logs the string “Howdy!”
 //
 //    Test this function by directly calling `sayHowdy()`
+// (function sayHowdy() {
+//    console.log("Howdy!")
+// })()
 //
 // Remember this function does not need a defined return value
 //
 // 1. Make a function called returnName() that returns the string of your name
-//
 // Test this function with `console.log(returnName())`
+// function returnName() {
+//    const name = "Patrick"
+//    return name
+// };
+// console.log(returnName())
 //
 //     1. Make a function called addThree() which takes in a number input and returns the number plus 3.
-//
 // Test this function with `console.log(addThree(5))`
+// function addThree(number){
+//    return number + 3
+// }
 //
+// console.log(addThree(5))
+
 //     1. Make a function called sayString() which returns the string input passed in.
-//
 // Test this function with `console.log(sayString('codeup'))`
 //
+// function sayString(input) {
+//    return input
+// };
 //
+// console.log(sayString("codeup"));
+
 //     ## Challenge Function Drills
 //
 // - Write a function called `identity(input)` that takes in an argument called
 // input and returns that input.
+// function identity(input) {
+//    console.log(input)
+// };
+// identity("Dave");
 //
 // - Write a function called `getRandomNumber(min, max)` that returns a random
 // number between min and max values sent to that function call.
+function getRandomNumber(min, max) {
+   console.log(Math.random() * (max - min) + min);
+}
+getRandomNumber(4, 99);
 //
 // - Write a function called `first(input)` that returns the first character in the
 // provided string.
