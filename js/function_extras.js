@@ -476,50 +476,131 @@
 //
 // - Write a function called `getRandomNumber(min, max)` that returns a random
 // number between min and max values sent to that function call.
-function getRandomNumber(min, max) {
-   console.log(Math.random() * (max - min) + min);
-}
-getRandomNumber(4, 99);
+// function getRandomNumber(min, max) {
+//    console.log(Math.random() * (max - min) + min);
+// }
+// getRandomNumber(4, 99);
 //
 // - Write a function called `first(input)` that returns the first character in the
 // provided string.
+// (function first(input) {
+//    let thatOneInFront = input.split("")
+//    console.log(thatOneInFront[0])
+// })("word")
+
+
 //
 // - Write a function called `last(input)` that returns the last character of a
 // string
+// (function last(input) {
+//        let thatOneInBack = input.split("");
+//        console.log(thatOneInBack[thatOneInBack.length - 1]);
+// })("word")
+
+
 //
 // - Write a function called `rest(input)` that returns everything but the first
-// character of a string.
+// // character of a string.
+// (function last(input) {
+//    console.log(input.slice(1,-1));
+// })("word")
+
 //
 // - Write a function called `reverse(input)` that takes a string and returns it
 // reversed.
+// (function reverse(input) {
+//     console.log(input.split("").reverse().join(""));
+// })("hello");
+
 //
 // - Write a function called `isNumeric(input)` that takes an input and returns a
 // boolean if the input is numeric.
+// (function isNumeric(input){
+//    console.log(Number.isInteger(input))
+// })(9)
 //
 // - Write a function called `count(input)` that takes in a string and returns the
 // number of characters.
+// (function count(input) {
+//    console.log(input.length)
+// })("george")
+
 //
 // - Write a function called `add(a, b)` that returns the sum of a and b
 //
+function add(a, b) {
+   return (a + b);
+}
+
+
 // - Write a function called `subtract(a, b)` that return the difference between
 // the two inputs.
+function subtract(a, b) {
+   return(a - b);
+}
+
 //
 // - Write `multiply(a, b)` function that returns the product
+function multiply(a, b) {
+   return(a * b);
+}
+
 //
 // - Write a `divide(numerator, denominator)` function that returns a divided by b
+function divide(a, b) {
+   return(a / b);
+}
 //
 // - Write a `remainder(number, divisor)` function that returns the remainder left
 // over when dividing `number` by the `divisor`
-//
+function remainder(a, b) {
+   return(a % b)
+}
+
 // - Write the function `square(a)` that takes in a number and returns the number
 // multiplied by itself.
+
+function square(a) {
+    return (a ** 2);
+}
 //
 // - Write a function called `sumOfSquares(a, b)` that uses only your `add()` function
 // and your square function and not + or * operators
+
+// function sumOfSquares(a, b) {
+//    a = square(a)
+//    b = square(b)
+//    console.log(add(a, b))
+// }
+// sumOfSquares(3, 4)
+
 //
 // - Write a function called `doMath(operator, a, b)` that takes 3 parameters. The
 // first parameter is the name of the math function you want to apply. a and b
 // are the two numbers to run that function on.
+
+function doMath(operator, a, b) {
+   switch (operator) {
+      case "+":
+         console.log(add(a,b));
+         break;
+      case "-":
+         console.log(subtract(a, b));
+         break;
+      case "*":
+         console.log(multiply(a, b));
+         break;
+      case "/":
+         console.log(divide(a, b));
+         break;
+      default:
+         console.log("Please pick one of the following operators: + - * '/'");
+   }
+}
+
+doMath("/", 3, 8)
+
+
 //
 // ## Even More Function Bonuses
 //
