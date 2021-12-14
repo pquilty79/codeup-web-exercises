@@ -370,42 +370,67 @@
 // })(5, "5");
 
 // - Make a function named `not(input)` returns the input with a flipped boolean
-
+// (function not(input) {
+//     if (typeof input == "boolean") {
+//         console.log(!input);
+//     } else {
+//         console.log("not a boolean");
+//     }
+// })(true);
 
 
 // - Make a function named `notNot(input)` that the negation of the negation of the
 // input.
+// (function notNot(input) {
+//         console.log(!(!input));
+// })(true);
 
 
 // - Make a function named `and(predicate1, predicate2)` that returns the logical
 // operation of AND
-
+// (function and(predicate1, predicate2) {
+//     console.log(predicate1 && predicate2);
+// })(true, false)l
 
 
 // - Make a function named `or(predicate1, predicate2)` that returns the logical
 // operation of OR
-
+// (function or(predicate1, predicate2) {
+//     console.log(predicate1 || predicate2);
+// })(true, false);
 
 
 // - Write a function called `reverseString(string)` that reverses a string
-
+// (function reverseString(string) {
+//     console.log(string.split("").reverse().join(""));
+// })("hello");
 
 
 // - Make a function named `absoluteValue(number)` that returns the absolute value
 // of a number.
+// (function absoluteValue(number) {
+//     console.log(Math.abs(number))
+// })(-7);
 
 
 // - Make a function named `rollDice(sides)` that takes in an argument containing
 // the number of sides the die should have. Generate a random number between 1 up
 // to and including the number of sides.
 //
-//
+// (function rollDice(sides) {
+//     console.log(Math.floor(Math.random() * sides + 1));
+// })(6);
 //
 // ## Simple Function Drills
 //
 // 1. Make a function called returnTwo() that returns the number 2 when called
 //
 // Test this function with `console.log(returnTwo())`
+function returnTwo() {
+   return 2
+};
+console.log(returnTwo())
+
 //
 //     1. Make a function called sayHowdy() which console.logs the string “Howdy!”
 //
