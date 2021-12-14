@@ -251,29 +251,52 @@
 //     }
 // )(0);
 // - Write a function named `lowerCase(string)`
-(function lowerCase(string) {
-    console.log(string.toLowerCase())
-})("HI");
+// (function lowerCase(string) {
+//     console.log(string.toLowerCase())
+// })("HI");
 
 // - Write a function named `double(n)` that returns a number times two
-(function double(n) {
-    console.log(n * 2)
-})(4);
+// (function double(n) {
+//     console.log(n * 2)
+// })(4);
 
 // - Write a function named `triple(n)` that returns a number times 3
-(function triple(n) {
-        console.log(n * 3)
-    })(6);
-
+// (function triple(n) {
+//         console.log(n * 3)
+//     })(6);
 
 // - Write a function named `quadruple(n)` that returns a number times 4
+// (function quadruple(n) {
+//     console.log(n * 4);
+// })(5);
+
 // - Write a function named `half(n)` that returns 1/2 of the provided input
+// (function half(n) {
+//     console.log(n / 2)
+// })(19)
+
 // - Write a function named `subtract(a, b)` that returns `a` minus `b`
+// (function subtract(a, b) {
+//         console.log(a - b);
+//            }
+// )(9, 11)
+
 // - Write a function named `multiply(a, b)` that returns the product of `a` times
 //     `b`
+// (function multiply(a, b) {
+//     console.log(a * b);
+//     })(79,79);
+
 // - Write a function named divide(a, b) that returns `a` divided by ~b~
+// (function divide (a,b) {
+//     console.log(a / b);
+// })(99, 9);
+
+
 //     - Write a function named `remainder(a, b)` that returns the remainder after
 // dividing a by b
+
+
 // - Make a function named `modulo(a, b)` that returns the returns the remainder
 // after dividing a by b
 // - Write a function named `cube(n)` that returns n * n * n

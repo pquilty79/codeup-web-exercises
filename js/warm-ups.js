@@ -17,6 +17,19 @@
 // doesQualify(590,9000);
 //
 
-(function isFive(number) {
-    return number === 5;
-    })(2);
+// (function isFive(number) {
+//     return number === 5;
+//     })(2);
+
+
+(function isMultipleOfThree() {
+        let input = parseFloat(prompt("Give me a number."));
+        if (isNaN(input)) {
+            alert("This is not a number")
+        } else if (input % 3 === 0) {
+            alert(input + " is a multiple of three")
+        } else {
+            alert(input + " is not a multiple of three")
+        }
+    }
+)();
