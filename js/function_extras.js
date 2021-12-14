@@ -295,36 +295,106 @@
 
 //     - Write a function named `remainder(a, b)` that returns the remainder after
 // dividing a by b
+// (function remainder(a, b) {
+//     console.log(a % b);
+// })(9, 4);
 
-
-// - Make a function named `modulo(a, b)` that returns the returns the remainder
+// - Make a function named `modulo(a, b)` that returns the remainder
 // after dividing a by b
+// (function modulo(a, b) {
+//     console.log(a % b);
+// })(9, 4);
+
 // - Write a function named `cube(n)` that returns n * n * n
+// (function cube(n) {
+//     console.log(n ** 3);
+// })(4);
+
 // - Write a function named `squareRoot(n)` that returns the square root of the
 // input
+// (function squareRoot(n) {
+//     console.log(Math.sqrt(n));
+// })(9);
+
 // - Write a function named `cubeRoot(n)` that returns the cube root of the input
+// (function cubeRoot(n) {
+//     console.log(Math.cbrt(n))
+// })(36);
+
 // - Write a function named `invertSign(number)` that returns a negative version of
 // a positive number, a positive version of negative, and false for all else.
+// (function invertSign(number) {
+//     if (isNaN(number) === false)
+//     {
+//         console.log(-number)
+//     } else {
+//         console.log(false)
+//     }
+// })(-42);
+
 // - Write a function named `degreesToRadians(number)`
+// (function degreesToRadians(number) {
+//     console.log(number * (Math.PI / 180));
+// })(90);
+
 // - Write a function named `radiansToDegrees(number)`
+// (function radiansToDegrees(number) {
+//     console.log(number * (180/Math.PI));
+// })(360);
+
 // - Make a function named `isBlank(input)` that determines if a given input is
 // spaces, newline characters, or tabs.
+
+// (function isBlank(input) {
+//     let blank = [" ", "/    ", "/n"];
+//     console.log(blank.includes(input));
+// })("/n");
+
 // - Make a function named `trim(string)` that removes empty spaces before and
 // after the input.
+
+// (function trim(string) {
+//     console.log(string.replace(/\s+/, ''))
+// })(" the word       ");
+
 // - Make a function named `areEqual(input1, input2)` that returns if both inputs
 // have the same value
+// (function areEqual(input1, input2) {
+//     console.log(input1 == input2)
+// })(5, "5");
+
 // - Make a function named `areIdentical(input1, input2)` that returns if both
 //     inputs are same value and data type.
+// (function areIdentical(input1, input2) {
+//     console.log(input1 === input2)
+// })(5, "5");
+
 // - Make a function named `not(input)` returns the input with a flipped boolean
+
+
+
 // - Make a function named `notNot(input)` that the negation of the negation of the
 // input.
+
+
 // - Make a function named `and(predicate1, predicate2)` that returns the logical
 // operation of AND
+
+
+
 // - Make a function named `or(predicate1, predicate2)` that returns the logical
 // operation of OR
+
+
+
 // - Write a function called `reverseString(string)` that reverses a string
+
+
+
 // - Make a function named `absoluteValue(number)` that returns the absolute value
 // of a number.
+
+
 // - Make a function named `rollDice(sides)` that takes in an argument containing
 // the number of sides the die should have. Generate a random number between 1 up
 // to and including the number of sides.
