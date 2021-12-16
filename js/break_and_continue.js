@@ -18,7 +18,7 @@ function breakHere(oddNumber) {
                 console.log("Yikes! Skipping number: " + oddNumber);
 
             } else {
-                console.log("Here is an odd number: " + i);
+                 console.log("Here is an odd number: " + i);
             }
         }
     } else {
