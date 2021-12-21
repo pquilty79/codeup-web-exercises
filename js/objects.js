@@ -202,22 +202,19 @@
 
 const books = []
 function createBook(bookTitle, bookAuthor) {
-        books.title = bookTitle
-        books.author = bookAuthor
-        books.push(books.title,books.author)
-        console.log(books)
-    }
+    books.title = bookTitle
+    books.author = bookAuthor
+    books.unshift(books.title, books.author)
+    books.forEach(function (showBookInfo) {
+        console.log("Book # " + (books.indexOf(showBookInfo) + 1));
+        console.log("Title: " + books.title);
+        console.log("Author: " + books.author);
+    })
+}
 createBook("Good Omens", "Neil Gaiman");
 createBook("The Screwtape Letters", "C.S. Lewis");
 
-// Still not working
-// function showBookInfo() {
-//     books.forEach(function (book){
-//         console.log("Book # " + (books.indexOf(book) + 1));
-//         console.log("Title: " + book.title);
-//         console.log("Author: " + book.author);
-//     })
-// }
-// showBookInfo(books)
+
+
 
 })();
