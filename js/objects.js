@@ -199,22 +199,30 @@
      *   outputs the information described above. Refactor your loop to use your
      *   `showBookInfo` function.
      */
+    var books = []
+    books.forEach(function(book, index){
+        console.log("Book # " + (index + 1));
+        console.log("Title: " + book.title);
+        console.log("Author:" + book.author.firstName + " " + book.author.lastName);
+    });
+    var createBook = function (title, authorFirstName, authorLastName){
+        var book = {};
+        book.title = title;
+        book.author = {};
+        book.author.firstName = authorFirstName;
+        book.author.lastName = authorLastName;
+        return book;
+    };
 
-const books = []
-function createBook(bookTitle, bookAuthor) {
-    books.title = bookTitle
-    books.author = bookAuthor
-    books.unshift(books.title, books.author)
-    books.forEach(function (showBookInfo) {
-        console.log("Book # " + (books.indexOf(showBookInfo) + 1));
-        console.log("Title: " + books.title);
-        console.log("Author: " + books.author);
-    })
-}
-createBook("Good Omens", "Neil Gaiman");
-createBook("The Screwtape Letters", "C.S. Lewis");
-
-
+    var showBookInfo = function(book, index){
+        console.log("Book # " + (index + 1));
+        console.log("Title: " + book.title);
+        console.log("Author: " + book.author.firstName + " " + book.author.lastName);
+    };
+    books.push(createBook("The Screwtape Letters", "C.S.", "Lewis"));
+    books.push(createBook("Good Omens", "Neil", "Gaiman" ))
+    books.push(createBook("the Lord of the Rings", "J.R.R.", "Tolkien" ))
+    books.forEach(showBookInfo);
 
 
 })();
