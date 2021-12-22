@@ -206,7 +206,7 @@
         console.log("Author:" + book.author.firstName + " " + book.author.lastName);
     });
     let createBook = function (title, authorFirstName, authorLastName){
-        var book = {};
+        let book = {};
         book.title = title;
         book.author = {};
         book.author.firstName = authorFirstName;
