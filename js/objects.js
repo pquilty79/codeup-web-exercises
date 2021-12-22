@@ -199,13 +199,13 @@
      *   outputs the information described above. Refactor your loop to use your
      *   `showBookInfo` function.
      */
-    var books = []
+    const books = []
     books.forEach(function(book, index){
         console.log("Book # " + (index + 1));
         console.log("Title: " + book.title);
         console.log("Author:" + book.author.firstName + " " + book.author.lastName);
     });
-    var createBook = function (title, authorFirstName, authorLastName){
+    let createBook = function (title, authorFirstName, authorLastName){
         var book = {};
         book.title = title;
         book.author = {};
@@ -214,7 +214,7 @@
         return book;
     };
 
-    var showBookInfo = function(book, index){
+    let showBookInfo = function(book, index){
         console.log("Book # " + (index + 1));
         console.log("Title: " + book.title);
         console.log("Author: " + book.author.firstName + " " + book.author.lastName);
