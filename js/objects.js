@@ -221,7 +221,7 @@
     };
     books.push(createBook("The Screwtape Letters", "C.S.", "Lewis"));
     books.push(createBook("Good Omens", "Neil", "Gaiman" ))
-    books.push(createBook("the Lord of the Rings", "J.R.R.", "Tolkien" ))
+    books.push(createBook("The Lord of the Rings", "J.R.R.", "Tolkien" ))
     books.forEach(showBookInfo);
 
 
