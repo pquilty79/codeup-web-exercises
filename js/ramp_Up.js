@@ -76,6 +76,25 @@
 //     }
 //         alert("Success!")
 // })();
+// password with a do while loop
+// function getBetterPassword2() {
+//     var answer = "howdy";
+//     var attempts = 0;
+//     var guess;
+//     do {
+//         guess = prompt("Enter your password: ");
+//         attempts++;
+//     } while(guess !== answer && attempts < 3);
+//     if(guess === answer) {
+//         alert("ok");
+//     } else {
+//         alert("not ok");
+//     }
+// }
+
+
+
+
 //
 // Write a function named getMeaningOfLife which accepts one parameter, meaningfulNum.
 //     This function will use a while loop to compare its current number (a variable named counter) against the meaningfulNum.
@@ -111,3 +130,70 @@
 // getMeaningOfLife("42")
 // getMeaningOfLife(false)
 // getMeaningOfLife(-1)
+
+// TODO: MINI EXERCISE
+//      Write a function which uses a for-loop and
+//      -> accepts the number of times to iterate as a parameter
+//      -> only logs *if the iteration number is odd*
+
+// TODO: MINI EXERCISE
+//      Write a function which uses a for-loop and
+//      -> accepts the number of times to iterate as a parameter
+//      -> logs "This is an even iteration" on the evens
+//      -> logs "This is an odd iteration" on the odds
+
+// TODO: MINI EXERCISE
+//      Make a new version of your getPassword function using a for-loop!
+//      -> The purpose of the for-loop is to only allow a maximum number of attempts
+//          -> If the max attempt used unsuccessfully, alert the user of such and RETURN or BREAK
+//      -> Once the user enters the correct password, use the 'break' keyword to end the loop
+//      -> After the loop concludes, alert the use they have entered the correct password
+
+// (function forThis(iterate){
+//     for (let i = 0; i<=iterate; i++) {
+//         if (i % 2 !== 0) {
+//             console.log(i);
+//         }
+//     }
+// })(50);
+//
+// (function forThat(times) {
+//     for (let i = 0; i<=times; i++) {
+//         if (i % 2 !== 0) {
+//             console.log(i + " - This is an odd iteration");
+//         } else {
+//             console.log(i + " - This is an even iteration");
+//         }
+//     }
+// })(16);
+
+// do while example
+// (function getBetterPassword2() {
+//     var answer = "howdy";
+//     var attempts = 0;
+//     var guess;
+//     do {
+//         guess = prompt("Enter your password: ");
+//         attempts++;
+//     } while(guess !== answer && attempts < 3);
+//     if(guess === answer) {
+//         alert("ok");
+//     } else {
+//         alert("not ok");
+//     }
+// })();
+
+(function getAnotherBloodyPassword() {
+    let password = "Frank-N-Furter";
+    let userInput = prompt("Enter your password:")
+    if (userInput !== password) {
+        for (let attempts = 1; attempts <= 2; attempts++) {
+            userInput = prompt("Enter your password:");
+            if (attempts === 2) {
+                alert("Too many guesses. I am going to have to freeze you like Eddie");
+                }
+                }
+        } else {
+        alert("Success. Let's make a man!")
+    }
+})();
