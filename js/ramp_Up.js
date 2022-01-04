@@ -167,33 +167,18 @@
 //     }
 // })(16);
 
-// do while example
-// (function getBetterPassword2() {
-//     var answer = "howdy";
-//     var attempts = 0;
-//     var guess;
-//     do {
-//         guess = prompt("Enter your password: ");
-//         attempts++;
-//     } while(guess !== answer && attempts < 3);
-//     if(guess === answer) {
-//         alert("ok");
-//     } else {
-//         alert("not ok");
+
+// (function getAnotherBloodyPassword() {
+//     let password = "Frank-N-Furter";
+//     let userInput = prompt("Enter your password:")
+//     if (userInput !== password) {
+//         for (let attempts = 1; attempts <= 2; attempts++) {
+//             userInput = prompt("Enter your password:");
+//             if (attempts === 2) {
+//                 alert("Too many guesses. I am going to have to freeze you like Eddie");
+//                 }
+//                 }
+//         } else {
+//         alert("Success. Let's make a man!")
 //     }
 // })();
-
-(function getAnotherBloodyPassword() {
-    let password = "Frank-N-Furter";
-    let userInput = prompt("Enter your password:")
-    if (userInput !== password) {
-        for (let attempts = 1; attempts <= 2; attempts++) {
-            userInput = prompt("Enter your password:");
-            if (attempts === 2) {
-                alert("Too many guesses. I am going to have to freeze you like Eddie");
-                }
-                }
-        } else {
-        alert("Success. Let's make a man!")
-    }
-})();
