@@ -48,7 +48,7 @@
 
 //mini exercise from class
 // let favoriteArtists = ["Bob Dylan", "The Beatles", "The Rolling Stones", "U2", "The Civil Wars"];
-// (function artistOuput () {
+// (function artistOutput () {
 //     console.log(favoriteArtists[0])
 //     console.log(favoriteArtists[2])
 //     console.log(favoriteArtists[favoriteArtists.length-1])

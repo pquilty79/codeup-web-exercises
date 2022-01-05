@@ -6,7 +6,7 @@
      * Create an array of 4 people's names and store it in a variable called
      * 'names'.
      */
-    let names = ["Partrick", "Maria", "Ludmila", "Droople"];
+    let names = ["Patrick", "Maria", "Ludmila", "Droople"];
     /**
      * TODO:
      * Create a log statement that will log the number of elements in the names
@@ -50,7 +50,7 @@
      *  > second([1, 2, 3, 4, 5]) // returns 2
      *  > last([1, 2, 3, 4, 5]) // return 5
      */
-    const numbers = [1, 2, 3, 4, 5];
+    const numbers = [1, 2, 3, 4, 5, "Bob"];
     (function findFirst() {
      console.log(numbers[0]);
  })();
@@ -60,8 +60,8 @@
     })();
 
     (function findLast() {
-        let last = (numbers.length);
-        console.log(last);
+        let last = numbers.length-1;
+        console.log(numbers[last]);
     })();
 
 })();
