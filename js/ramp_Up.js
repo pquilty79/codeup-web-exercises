@@ -182,3 +182,45 @@
 //         alert("Success. Let's make a man!")
 //     }
 // })();
+
+const movies = [
+    {
+        title: "The Wrath of Khan",
+        yearReleased: 1982,
+        rating: "PG",
+        director: {
+            firstName: "Nicholas",
+            lastName: "Meyer"
+        },
+        imdbRating: 7.7,
+        oscarWin: false,
+        genre: ["Science Fiction"],
+    },
+    {
+        title: "The Search for Spock",
+        yearReleased: 1984,
+        rating: "PG",
+        director: {
+            firstName: "Leonard",
+            lastName: "Nimoy",
+        },
+        imdbRating: 6.7,
+        oscarWin: false,
+        genre: ["Science Fiction"],
+    }
+]
+
+movies.forEach(function (movie){
+    console.log("Title: " + movie.title)
+    console.log("Year released: " + movie.yearReleased);
+    console.log("MPAA Rating: " + movie.rating);
+    console.log("Director: " + movie.director.firstName + " " + movie.director.lastName);
+    console.log("IMDB Rating: " + movie.imdbRating)
+    if (movie.oscarWin) {
+        console.log("This movie won an Academy Award!")
+    } else {
+        console.log("This movie did not win an Academy Award")
+    }
+    console.log("Genre: " + movie.genre)
+})
+

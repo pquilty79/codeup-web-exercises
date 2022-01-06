@@ -78,86 +78,86 @@
      * > console.log(books[0].author.firstName) // "Douglas"
      * > console.log(books[0].author.lastName) // "Adams"
      */
-    // var books = [
-    //     {
-    //         title: "Salmon of Doubt",
-    //         author: {
-    //             firstName: "Douglas",
-    //             lastName: "Adams"
-    //         }
-    //     },
-    //     {
-    //         title: "The Hitchhiker's Guide to the Galaxy",
-    //         author: {
-    //             firstName: "Douglas",
-    //             lastName: "Adams"
-    //         }
-    //     },
-    //     {
-    //     title: "Life, the Universe, and Everything",
-    //     author: {
-    //     firstName: "Douglas",
-    //         lastName: "Adams"
-    //         }
-    //     },
-    //     {
-    //         title: "The Restaurant at the End of the Universe",
-    //         author: {
-    //             firstName: "Douglas",
-    //             lastName: "Adams"
-    //         }
-    //     },
-    //     {
-    //         title: "So Long and Thanks for All the Fish!",
-    //         author: {
-    //             firstName: "Douglas",
-    //             lastName: "Adams"
-    //         }
-    //     },
-    //     {
-    //         title: "Mostly Harmless",
-    //         author: {
-    //             firstName: "Douglas",
-    //             lastName: "Adams"
-    //         }
-    //     },
-    //     {
-    //         title: "Dirk Gently's Holistic Detective Agency",
-    //         author: {
-    //             firstName: "Douglas",
-    //             lastName: "Adams"
-    //         }
-    //     },
-    //     {
-    //         title: "The Long Dark Tea-Time of the Soul",
-    //         author: {
-    //             firstName: "Douglas",
-    //             lastName: "Adams"
-    //         }
-    //     },
-    //     {
-    //         title: "Last Chance to See",
-    //         author: {
-    //             firstName: "Douglas",
-    //             lastName: "Adams"
-    //         }
-    //     },
-    //     {
-    //         title: "The Meaning of Liff",
-    //         author: {
-    //             firstName: "Douglas",
-    //             lastName: "Adams"
-    //         }
-    //     },
-    //     {
-    //         title: "The Deeper meaning of Liff",
-    //         author: {
-    //             firstName: "Douglas",
-    //             lastName: "Adams"
-    //         }
-    //     },
-    // ];
-    //
+    var books = [
+        {
+            title: "Salmon of Doubt",
+            author: {
+                firstName: "Douglas",
+                lastName: "Adams"
+            }
+        },
+        {
+            title: "The Hitchhiker's Guide to the Galaxy",
+            author: {
+                firstName: "Douglas",
+                lastName: "Adams"
+            }
+        },
+        {
+            title: "Life, the Universe, and Everything",
+            author: {
+                firstName: "Douglas",
+                lastName: "Adams"
+            }
+        },
+        {
+            title: "The Restaurant at the End of the Universe",
+            author: {
+                firstName: "Douglas",
+                lastName: "Adams"
+            }
+        },
+        {
+            title: "So Long and Thanks for All the Fish!",
+            author: {
+                firstName: "Douglas",
+                lastName: "Adams"
+            }
+        },
+        {
+            title: "Mostly Harmless",
+            author: {
+                firstName: "Douglas",
+                lastName: "Adams"
+            }
+        },
+        {
+            title: "Dirk Gently's Holistic Detective Agency",
+            author: {
+                firstName: "Douglas",
+                lastName: "Adams"
+            }
+        },
+        {
+            title: "The Long Dark Tea-Time of the Soul",
+            author: {
+                firstName: "Douglas",
+                lastName: "Adams"
+            }
+        },
+        {
+            title: "Last Chance to See",
+            author: {
+                firstName: "Douglas",
+                lastName: "Adams"
+            }
+        },
+        {
+            title: "The Meaning of Liff",
+            author: {
+                firstName: "Douglas",
+                lastName: "Adams"
+            }
+        },
+        {
+            title: "The Deeper meaning of Liff",
+            author: {
+                firstName: "Douglas",
+                lastName: "Adams"
+            }
+        },
+    ];
+
 
     /**
      * TODO:
@@ -184,11 +184,11 @@
      *      ...
      */
 
-    // books.forEach(function (book){
-    //     console.log("Book # " + (books.indexOf(book) + 1));
-    //     console.log("Title: " + book.title);
-    //     console.log("Author: " + book.author.firstName + " " + book.author.lastName);
-    // })
+    books.forEach(function (book){
+        console.log("Book # " + (books.indexOf(book) + 1));
+        console.log("Title: " + book.title);
+        console.log("Author: " + book.author.firstName + " " + book.author.lastName);
+    })
     /**
      * Bonus:
      * - Create a function named `createBook` that accepts a title and author
@@ -199,8 +199,10 @@
      *   outputs the information described above. Refactor your loop to use your
      *   `showBookInfo` function.
      */
-    const books = []
-    books.forEach(function(book, index){
+
+
+    const booksAgain = []
+    booksAgain.forEach(function(book, index){
         console.log("Book # " + (index + 1));
         console.log("Title: " + book.title);
         console.log("Author:" + book.author.firstName + " " + book.author.lastName);
@@ -215,14 +217,17 @@
     };
 
     let showBookInfo = function(book, index){
+        console.log("These are some of my favourite books:")
         console.log("Book # " + (index + 1));
         console.log("Title: " + book.title);
         console.log("Author: " + book.author.firstName + " " + book.author.lastName);
     };
-    books.push(createBook("The Screwtape Letters", "C.S.", "Lewis"));
-    books.push(createBook("Good Omens", "Neil", "Gaiman" ))
-    books.push(createBook("The Lord of the Rings", "J.R.R.", "Tolkien" ))
-    books.forEach(showBookInfo);
+    booksAgain.push(createBook("The Screwtape Letters", "C.S.", "Lewis"));
+    booksAgain.push(createBook("Good Omens", "Neil", "Gaiman" ))
+    booksAgain.push(createBook("The Lord of the Rings", "J.R.R.", "Tolkien" ))
+    booksAgain.forEach(showBookInfo);
 
 
 })();
+
+
