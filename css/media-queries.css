@@ -1,6 +1,27 @@
-/* Small devices (phones and pocket devices, 576 and up) */
-@media screen and (min-width:576px) {
+ul {
+    list-style: none;
+}
 
+nav, h1, h2 {
+    display: flex;
+}
+
+
+
+
+
+
+/* Small devices (phones and pocket devices, 576 and up) */
+@media screen and (min-width:356px) {
+.alert-info {
+    display: flex;
+    background-color: rgb(214,254,254);
+    margin: auto;
+    border-width: 1px;
+    border-color: lightgray;
+    border-style: solid;
+
+}
 
 
 
@@ -12,7 +33,9 @@
 
 /* Large devices (desktops, 992px and up) */
 @media screen and (min-width:992px) {
-
+.alert-info {
+    display: none;
+}
 
 
 
