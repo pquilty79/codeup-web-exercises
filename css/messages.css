@@ -8,7 +8,7 @@ body, html {
 
 /*Use the following naming convention for the variables bg-info, text-info, bg-success, text-success*/
 
-div {
+.message {
     margin: auto auto .6em;
     border: 1px solid lightgray;
     padding-top: 8px;
