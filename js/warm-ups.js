@@ -40,18 +40,34 @@
 //     i = i + 2
 // }
 
+//
+// const myArray = ["fun", "exercise", "for", "class"];
+// (function arrayToString(myArray) {
+//     let join = (myArray, separator = " ") => {
+//         let concatString = "";
+//         for (let i = 0; i < myArray.length; i++) {
+//             if (concatString) {
+//                 concatString += separator;
+//             }
+//             concatString += myArray[i];
+//         }
+//         return concatString
+//     }
+//     console.log(join(myArray, " "));
+// })(myArray);
 
-const myArray = ["fun", "exercise", "for", "class"];
-(function arrayToString(myArray) {
-    let join = (myArray, separator = " ") => {
-        let concatString = "";
-        for (let i = 0; i < myArray.length; i++) {
-            if (concatString) {
-                concatString += separator;
+
+//exercise to remove value from array
+const bugs = ["mosquito", "ant", "scorpion", "ant", "ant", "mosquito", "typo", "reference error", "type error"];
+
+function removeAll(array, value) {
+    let newArray = []
+        for (let i = 0; i < array.length; i++) {
+            if (array[i] !== value) {
+                newArray.push(array[i]);
             }
-            concatString += myArray[i];
         }
-        return concatString
-    }
-    console.log(join(myArray, " "));
-})(myArray);
+    return newArray;
+};
+
+console.log(removeAll(bugs, "ant"))
