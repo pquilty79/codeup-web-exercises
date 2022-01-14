@@ -68,6 +68,6 @@ function removeAll(array, value) {
             }
         }
     return newArray;
-};
+}
 
 console.log(removeAll(bugs, "ant"))
