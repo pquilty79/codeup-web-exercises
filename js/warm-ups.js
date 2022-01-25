@@ -58,16 +58,25 @@
 
 
 //exercise to remove value from array
-const bugs = ["mosquito", "ant", "scorpion", "ant", "ant", "mosquito", "typo", "reference error", "type error"];
+// const bugs = ["mosquito", "ant", "scorpion", "ant", "ant", "mosquito", "typo", "reference error", "type error"];
+//
+// function removeAll(array, value) {
+//     let newArray = []
+//         for (let i = 0; i < array.length; i++) {
+//             if (array[i] !== value) {
+//                 newArray.push(array[i]);
+//             }
+//         }
+//     return newArray;
+// }
+//
+// console.log(removeAll(bugs, "ant"))
 
-function removeAll(array, value) {
-    let newArray = []
-        for (let i = 0; i < array.length; i++) {
-            if (array[i] !== value) {
-                newArray.push(array[i]);
-            }
-        }
-    return newArray;
+function reverseString(string) {
+    let splitString = string.split("");
+    let reverseArray = splitString.reverse();
+    let newString = reverseArray.join("");
+    console.log(newString)
 }
 
-console.log(removeAll(bugs, "ant"))
+reverseString("alucard");
