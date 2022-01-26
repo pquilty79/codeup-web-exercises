@@ -72,11 +72,30 @@
 //
 // console.log(removeAll(bugs, "ant"))
 
-function reverseString(string) {
-    let splitString = string.split("");
-    let reverseArray = splitString.reverse();
-    let newString = reverseArray.join("");
-    console.log(newString)
+// function reverseString(string) {
+//     let splitString = string.split("");
+//     let reverseArray = splitString.reverse();
+//     let newString = reverseArray.join("");
+//     console.log(newString)
+// }
+//
+// reverseString("alucard");
+
+// function findAverage(array) {
+//     let sum = array.reduce((partialSum, a) => partialSum + a, 0);
+//     return sum / array.length
+// }
+// console.log(findAverage(([5,4,3,2,1])));
+//
+
+function myMin(myNums) {
+    let theMin = Infinity;
+    myNums.forEach(function(aNum) {
+        if(aNum < theMin) {
+            theMin = aNum;
+        }
+    });
+    return theMin;
 }
 
-reverseString("alucard");
+console.log(myMin([5, 2, 7, 8, 32, 1]));
