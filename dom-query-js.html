@@ -8,7 +8,7 @@
 
 <h1 id="main-header">Hello World!</h1>
     <button id="btn1">Change me</button>
-    <button id="btn3">Change it back</button>
+<!--    <button id="btn3">Change it back</button>-->
 
 <ul>
     <li data-dbid="1">Item 1</li>
@@ -29,6 +29,7 @@
     culpa qui officia deserunt mollit anim id est laborum.
 </p>
     <button id="btn4">Ditch the Latin!</button>
+    <button id="btn5">Mihi placet Latinum, irrumator capra</button>
 
 <script>
     (function() {
@@ -38,7 +39,11 @@
 
         // TODO: Set inner html of mainHeader to "JavaScript is Cool"
         var listener = function (event) {
-            mainHeader.innerHTML = "Javascript is Cool!";
+            if (mainHeader.innerHTML === "Hello World!") {
+                mainHeader.innerHTML = "Javascript is Cool!";
+            } else {
+                mainHeader.innerHTML = "Hello World!";
+            }
         }
         document.getElementById('btn1').addEventListener('click', listener);
 
@@ -46,8 +51,8 @@
             mainHeader.innerHTML = "Hello World!";
         }
 
-        var btn3 = document.getElementById('btn3');
-        btn3.addEventListener('click', listAgain);
+        // var btn3 = document.getElementById('btn3');
+        // btn3.addEventListener('click', listAgain);
 
 
         // TODO: Uncomment the next line and get the sub header element by id
@@ -55,8 +60,13 @@
 
         // TODO: Set the text color of subHeader to blue
         var listenerToo = function (event) {
-            subHeader.style.color = "#0000FF";
-        }
+            // subHeader.style.color = "#0000FF";
+            // changed to random color
+                const randomColor = Math.floor(Math.random()*16777215).toString(16);
+                subHeader.style.color = "#" + randomColor;
+
+            }
+
         document.getElementById('btn2').addEventListener('click', listenerToo);
 
         // TODO: Uncomment the next line and get all list items
@@ -64,7 +74,7 @@
 
         // TODO: Set text color on every other list item to grey
 
-        for (let i = 0; i < listItems.length; i = i + 2) {
+        for (let i = 0; i < listItems.length; i+=2) {
             listItems[i].style.color = "#808080"
         }
 
@@ -75,6 +85,8 @@
                 listItems[i].style.color = "#0000FF"
             }
         }
+        // alternate one line version from Raymond
+        // document.querySelector("[data-dbid='1']").style.color = 'blue';
 
 
         // TODO: Uncomment the next line and get all elements with class name sub-paragraph
@@ -83,10 +95,24 @@
 
         // TODO: Change the text in the first sub paragraph to "Mission Accomplished!"
         var listenerThree = function (event) {
-            subParagraphs[0].innerText = "Mission Accomplished!";
+            var btn4 = document.getElementById('btn4');
+            subParagraphs[0].innerHTML = "Mission Accomplished!";
+            //or subParagraphs[0].innerText
+            //or subParagraphs[0].textcontent
         }
         document.getElementById('btn4').addEventListener('click', listenerThree);
 
+        // Add new button
+        let listenerFour = function (event) {
+            subParagraphs[0].innerHTML = "    Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do\n" +
+                "    eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim\n" +
+                "    ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut\n" +
+                "    aliquip ex ea commodo consequat. Duis aute irure dolor in\n" +
+                "    reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla\n" +
+                "    pariatur. Excepteur sint occaecat cupidatat non proident, sunt in\n" +
+                "    culpa qui officia deserunt mollit anim id est laborum.";
+        }
+        document.getElementById('btn5').addEventListener('click', listenerFour);
 
     })();
 </script>

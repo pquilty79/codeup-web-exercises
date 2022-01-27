@@ -87,15 +87,20 @@
 // }
 // console.log(findAverage(([5,4,3,2,1])));
 //
+//
+// function myMin(myNums) {
+//     let theMin = Infinity;
+//     myNums.forEach(function(aNum) {
+//         if(aNum < theMin) {
+//             theMin = aNum;
+//         }
+//     });
+//     return theMin;
+// }
+//
+// console.log(myMin([5, 2, 7, 8, 32, 1]));
 
-function myMin(myNums) {
-    let theMin = Infinity;
-    myNums.forEach(function(aNum) {
-        if(aNum < theMin) {
-            theMin = aNum;
-        }
-    });
-    return theMin;
+function sumOfSquares(a, b) {
+    return Math.pow(a, 2) + Math.pow(b, 2);
 }
-
-console.log(myMin([5, 2, 7, 8, 32, 1]));
+console.log(sumOfSquares(2, 3))
