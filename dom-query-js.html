@@ -29,7 +29,7 @@
     culpa qui officia deserunt mollit anim id est laborum.
 </p>
     <button id="btn4">Ditch the Latin!</button>
-    <button id="btn5">Mihi placet Latinum, irrumator capra</button>
+    <button id="btn5">Mihi placet Latinum</button>
 
 <script>
     (function() {
@@ -47,9 +47,9 @@
         }
         document.getElementById('btn1').addEventListener('click', listener);
 
-        var listAgain = function (event) {
-            mainHeader.innerHTML = "Hello World!";
-        }
+        // var listAgain = function (event) {
+        //     mainHeader.innerHTML = "Hello World!";
+        // }
 
         // var btn3 = document.getElementById('btn3');
         // btn3.addEventListener('click', listAgain);
@@ -79,6 +79,7 @@
         }
 
         // TODO: Set text color of li with dbid = 1 to blue
+
         for (let i = 0; i < listItems.length; i++) {
             let dbId = listItems[i].getAttribute("data-dbid");
             if (dbId ==="1") {
@@ -94,8 +95,7 @@
         console.log(subParagraphs)
 
         // TODO: Change the text in the first sub paragraph to "Mission Accomplished!"
-        var listenerThree = function (event) {
-            var btn4 = document.getElementById('btn4');
+        let listenerThree = function (event) {
             subParagraphs[0].innerHTML = "Mission Accomplished!";
             //or subParagraphs[0].innerText
             //or subParagraphs[0].textcontent
