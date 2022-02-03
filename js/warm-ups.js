@@ -100,7 +100,25 @@
 //
 // console.log(myMin([5, 2, 7, 8, 32, 1]));
 
-function sumOfSquares(a, b) {
-    return Math.pow(a, 2) + Math.pow(b, 2);
-}
-console.log(sumOfSquares(2, 3))
+// function sumOfSquares(a, b) {
+//     return Math.pow(a, 2) + Math.pow(b, 2);
+// }
+// console.log(sumOfSquares(2, 3))
+
+// function whichStringIsLonger(string1, string2) {
+//     if (string1.length > string2.length) {
+//         return "first"
+//     } else if (string2.length > string1.length) {
+//         return "second"
+//     } else if (string1.length === string2.length) {
+//         return "neither"
+//     } else {
+//         return false
+//     }
+// }
+//
+// console.log(whichStringIsLonger("bobby", "lou")); // returns first
+// console.log(whichStringIsLonger("bob", "louise")); // returns second
+// console.log(whichStringIsLonger("bob", "lou")); // returns neither
+// console.log(whichStringIsLonger("bobby", 2)); // returns false
+// console.log(whichStringIsLonger(1, "lou")); // returns false
