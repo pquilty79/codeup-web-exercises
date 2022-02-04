@@ -122,3 +122,23 @@
 // console.log(whichStringIsLonger("bob", "lou")); // returns neither
 // console.log(whichStringIsLonger("bobby", 2)); // returns false
 // console.log(whichStringIsLonger(1, "lou")); // returns false
+
+function convertLowHighToObject(array) {
+    array = array.sort()
+    return "low: " + array[0] + ", high: " + array[array.length - 1];
+}
+
+console.log(convertLowHighToObject([36, 87, 2]))
+
+// function convertLowToObjectToo(x, y) {
+//     if (x>y) {
+//         return "low: " + y + ", high: " + x;
+//     } else if (y>x) {
+//         return "low: " + x + ", high: " + y;
+//     } else {
+//         return "both temperatures are equal";
+//     }
+// }
+//
+// console.log(convertLowToObjectToo(98, 2))
+// console.log(convertLowToObjectToo(75, 75))
