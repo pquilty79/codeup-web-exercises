@@ -7,7 +7,27 @@
 <body>
 
 <h1>My Blog</h1>
-<div id="post"></div>
+
+<div class="row" id="post"></div>
+
+
+
+<script>
+    "use strict";
+    (function() {
+        $.ajax("/data/blog.json", {
+            type: "GET"
+        }).done(function(data, status, jqXhr) {
+            console.log(data)
+            data.forEach(function(blog) {
+                console.log(blog)
+                let newPost =`<div class="card col-6" style="width: 18rem;"><div class="card-body"><h5 class="card-title">Today's Topic: ${blog.title}</h5><h6 class="card-subtitle mb-2">${blog.content}</h6> <h6 class="card-subtitle mb-2">${blog.categories}</h6> <h5 class="card-footer">${blog.date}</h5></div></div>`;
+                $("#post").append(newPost);
+            })
+        })
+    })();
+
+</script>
 
 
 
