@@ -41,7 +41,7 @@ function refresh() {
         console.log(data)
         data.forEach(function(inventory) {
             console.log(inventory)
-            let newToolsHTML =`<div class="card col-6" style="width: 18rem;"><div class="card-body"><h5 class="card-title">Tool: ${inventory.title}</h5><h6 class="card-subtitle mb-2 text-muted">Qty: ${inventory.quantity}</h6> <h6 class="card-subtitle mb-2 text-muted">Categories: ${inventory.categories}</h6> <h5 class="card-footer">Price: ${inventory.price}</h5> </div></div>`;
+            let newToolsHTML =`<div class="card col-6" style="width: 18rem;"><div class="card-body"><h5 class="card-title">Tool: ${inventory.title}</h5><h6 class="card-subtitle mb-2">Qty: ${inventory.quantity}</h6> <h6 class="card-subtitle mb-2">Categories: ${inventory.categories}</h6> <h5 class="card-footer">Price: ${inventory.price}</h5> </div></div>`;
             $("#insertProducts").append(newToolsHTML);
             })
         })
