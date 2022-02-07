@@ -19,12 +19,61 @@
         .highlighted {
             background-color: gold;
         }
+        .frames {
+            height: 200px;
+            width: 200px;
+            padding: 20px;
+            margin-right: 20px;
+            border: 10px solid saddlebrown;
+            float: left;
+        }
+        #frameone {
+            background-image: url(img/codeup-arrow.png);
+         }
+        #frametwo {
+            background-image: url(img/marioWin.gif);
+        }
+        #framethree {
+            background-image: url(img/pizza.png);
+        }
+        .framebuttons {
+            margin-top: 270px;
+            display: block;
+            margin-left: 50px;
+        }
     </style>
 
 </head>
 <body>
 
 <h1 id="toggleit">Learn About National Parks</h1>
+
+<h3 id="national-parks-heading">National Parks</h3>
+<ul id="national-parks">
+    <li>Arches</li>
+    <li>Badlands</li>
+    <li>Carlsbad Caverns</li>
+    <li>Denali</li>
+    <li>Everglades</li>
+</ul>
+<h3>State Parks of Texas</h3>
+<ul id="state-parks-texas">
+    <li>Abilene</li>
+    <li>Big Bend</li>
+    <li>Choke Canyon</li>
+    <li>Davis Mountains</li>
+    <li>Enchanted Rock</li>
+</ul>
+<h3>National Parks of Mars</h3>
+<ul id="national-parks-mars">
+    <li>Red Dust</li>
+    <li>Red Rocks</li>
+    <li>Larger Red Rocks</li>
+    <li>Desolate Red Valley</li>
+</ul>
+
+<button id="clicky-thingy" type="button">Clicky Thingy</button>
+
 
 <dl>
     <dt>Yellowstone National Park</dt>
@@ -58,6 +107,11 @@
     <dd class="description invisible">Not a national park, but rather somewhere that should be quarantined for the benefit of the rest of us</dd>
     <hr>
 </dl>
+<div id="frameone" class="frames"><button id="second-clicky-thingy" class='framebuttons' type="button">Clicky Thingy</button></div>
+<div id="frametwo" class="frames"><button id="third-clicky-thingy" class='framebuttons' type="button">Clicky Thingy</button></div>
+<div id="framethree" class="frames"><button id="fourth-clicky-thingy" class='framebuttons' type="button">Clicky Thingy</button></div>
+
+
 <script type="text/javascript" src="js/jquery.js"></script>
 <script>
     $(document).ready(function() {
@@ -69,14 +123,44 @@
             event.preventDefault();
             $(this).toggleClass('highlighted');
         });
+        $('#clicky-thingy').click(function(event){
+            event.preventDefault();
+            $('ul').each(function(){
+                $(this).children().last().css('background-color', 'yellow');
+            });
+        });
+        $('h3').click(function(event){
+            event.preventDefault();
+            $(this).next('ul').children().css('font-weight', 'bold');
+        });
+        $('li').click(function(event) {
+            event.preventDefault();
+            $(this).parent().children().first().css('color', 'blue');
+        });
+        $('#second-clicky-thingy').click(function(event){
+            event.preventDefault();
+            $('#frameone').css('background-image', 'url(img/marioWin.gif)');
+            $('#frametwo').css('background-image', 'url(img/codeup-arrow.png)');
+
+        });
+        let urls = ['url(img/marioWin.gif)', 'url(img/pizza.png)','url(img/codeup-arrow.png)']
+        let active = Math.floor(Math.random() * (urls.length));
+        $('#third-clicky-thingy').click(function(event){
+            active++
+            event.preventDefault();
+            $('.frames').each(function (){
+                $(this).css('background-image', urls[active++]);
+            });
+        });
+        $('#fourth-clicky-thingy').click(function(event){
+            event.preventDefault();
+            $('#framethree').css('background-image', 'url(img/marioWin.gif)');
+            $('#frametwo').css('background-image', 'url(img/pizza.png)');
+        });
     });
 
 
 
 </script>
-
-
-
-
 
 </body>
