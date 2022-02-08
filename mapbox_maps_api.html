@@ -1,0 +1,101 @@
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>First Mapbox Map</title>
+    <!-- Mapbox CSS -->
+    <link href='https://api.tiles.mapbox.com/mapbox-gl-js/v0.53.0/mapbox-gl.css' rel='stylesheet' />
+    <!-- Custom CSS -->
+    <script src="https://code.jquery.com/jquery-2.2.4.min.js" integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=" crossorigin="anonymous"></script>
+    <style>
+        #map {
+            /* the width and height may be set to any size */
+            width: 100%;
+            height: 700px;
+        }
+    </style>
+</head>
+<body>
+
+<h1>My First Mapbox Map!</h1>
+
+<!-- The HTML element that serves as the Mapbox container -->
+<div id='map'></div>
+
+<!-- Mapbox JS -->
+<script src='https://api.tiles.mapbox.com/mapbox-gl-js/v0.53.0/mapbox-gl.js'></script>
+<script src="js/mapbox-geocoder-utils.js"></script>
+<script src="js/keys.js"></script>
+
+<!-- Custom JS -->
+<script>
+    let accessToken = myMapBoxToken;
+    mapboxgl.accessToken = accessToken;
+    let map = new mapboxgl.Map({
+        container: 'map',
+        style: 'mapbox://styles/mapbox/streets-v9',
+        zoom: 10,
+        center: [-98.4916, 29.4252]
+    });
+    let restaurants = [
+    tiasInfo = {
+        address: "6820 Huebner Rd, Leon Valley, TX 78238",
+        popupHTML: "<p>Tia's Taco Hut: my favourite breakfast for machacado and carne guisada</p>"
+    },
+    brasaoInfo = {
+        address: "19210 W I-10, San Antonio, TX 78257",
+        popupHTML: "<p>Brasão Brazilian Steakhouse: meat feast</p>"
+    },
+    pashaInfo = {
+        address: "9339 Wurzbach Rd, San Antonio, TX 78240",
+        popupHTML: "<p>Pasha Mediterranean Grill: Middle Eastern favourite with its own bakery in the same strip</p>"
+    },
+    crabInfo = {
+        address: "8910 Bandera Rd #305, San Antonio, TX 78250",
+        popupHTML: "<p>Smashin' Crab: seafood and Cajun cuisine</p>"
+    },
+    nachoInfo = {
+        address: "24145 W Interstate 10 Frontage Rd, San Antonio, TX 78257",
+        popupHTML: "<p>Papa Nacho's</p>"
+    },
+        tequilaInfo = {
+            address: "10910 Marbach Rd #101, San Antonio, TX 78245",
+            popupHTML: "<p>El Tequila</p>"
+        },
+        pizzaInfo = {
+            address: "6989 Blanco Rd, San Antonio, TX 78216",
+            popupHTML: "<p>Dough Pizzeria Napoletana</p>"
+        },
+        indiaInfo = {
+            address: "1031 Patricia #106, San Antonio, TX 78213",
+            popupHTML: "<p>India Oven</p>"
+        },
+        polloInfo = {
+            address: "4642 Rigsby Ave, San Antonio, TX 78222",
+            popupHTML: "<p>Pollos Asados Los Nortenos</p>"
+        },
+    ]
+
+    function placeMarkerAndPopup(info, token, map) {
+        geocode(info.address, token).then(function(coordinates) {
+            let popup = new mapboxgl.Popup()
+                .setHTML(info.popupHTML);
+            let marker = new mapboxgl.Marker()
+                .setLngLat(coordinates)
+                .addTo(map)
+                .setPopup(popup);
+            // popup.addTo(map); to remove until clicked
+            marker.addTo(map);
+        });
+    }
+    (function placeRestaurants() {
+        restaurants.forEach(restaurant => placeMarkerAndPopup(restaurant, accessToken, map));
+    })();
+
+
+
+</script>
+</body>
+</html>
