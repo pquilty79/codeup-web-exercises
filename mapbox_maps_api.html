@@ -7,22 +7,36 @@
     <title>First Mapbox Map</title>
     <!-- Mapbox CSS -->
     <link href='https://api.tiles.mapbox.com/mapbox-gl-js/v0.53.0/mapbox-gl.css' rel='stylesheet' />
-    <!-- Custom CSS -->
+    <link href="https://api.mapbox.com/mapbox-gl-js/v2.7.0/mapbox-gl.css" rel="stylesheet">
+
     <script src="https://code.jquery.com/jquery-2.2.4.min.js" integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=" crossorigin="anonymous"></script>
+    <script src="https://api.mapbox.com/mapbox-gl-js/plugins/mapbox-gl-geocoder/v4.7.2/mapbox-gl-geocoder.min.js"></script>
+    <script src="https://api.mapbox.com/mapbox-gl-js/v2.7.0/mapbox-gl.js"></script>
+    <link rel="stylesheet" href="https://api.mapbox.com/mapbox-gl-js/plugins/mapbox-gl-geocoder/v4.7.2/mapbox-gl-geocoder.css" type="text/css">
+    <script src="https://api.mapbox.com/mapbox-gl-js/plugins/mapbox-gl-directions/v4.1.0/mapbox-gl-directions.js"></script>
+    <link rel="stylesheet" href="https://api.mapbox.com/mapbox-gl-js/plugins/mapbox-gl-directions/v4.1.0/mapbox-gl-directions.css" type="text/css">
     <style>
         #map {
             /* the width and height may be set to any size */
             width: 100%;
             height: 700px;
+            margin-top: 75px;
         }
+        #map > div.mapboxgl-control-container > div.mapboxgl-ctrl-top-left > div.mapboxgl-ctrl-geocoder.mapboxgl-ctrl > input {
+            margin-left: 30px;
+            width: 300px;
+
+        }
+
     </style>
 </head>
 <body>
 
-<h1>My First Mapbox Map!</h1>
+<h1>My Favourite Restaurants Map!</h1>
 
 <!-- The HTML element that serves as the Mapbox container -->
 <div id='map'></div>
+
 
 <!-- Mapbox JS -->
 <script src='https://api.tiles.mapbox.com/mapbox-gl-js/v0.53.0/mapbox-gl.js'></script>
@@ -31,35 +45,27 @@
 
 <!-- Custom JS -->
 <script>
-    let accessToken = myMapBoxToken;
-    mapboxgl.accessToken = accessToken;
-    let map = new mapboxgl.Map({
-        container: 'map',
-        style: 'mapbox://styles/mapbox/streets-v9',
-        zoom: 10,
-        center: [-98.4916, 29.4252]
-    });
     let restaurants = [
-    tiasInfo = {
-        address: "6820 Huebner Rd, Leon Valley, TX 78238",
-        popupHTML: "<p>Tia's Taco Hut: my favourite breakfast for machacado and carne guisada</p>"
-    },
-    brasaoInfo = {
-        address: "19210 W I-10, San Antonio, TX 78257",
-        popupHTML: "<p>Brasão Brazilian Steakhouse: meat feast</p>"
-    },
-    pashaInfo = {
-        address: "9339 Wurzbach Rd, San Antonio, TX 78240",
-        popupHTML: "<p>Pasha Mediterranean Grill: Middle Eastern favourite with its own bakery in the same strip</p>"
-    },
-    crabInfo = {
-        address: "8910 Bandera Rd #305, San Antonio, TX 78250",
-        popupHTML: "<p>Smashin' Crab: seafood and Cajun cuisine</p>"
-    },
-    nachoInfo = {
-        address: "24145 W Interstate 10 Frontage Rd, San Antonio, TX 78257",
-        popupHTML: "<p>Papa Nacho's</p>"
-    },
+        tiasInfo = {
+            address: "6820 Huebner Rd, Leon Valley, TX 78238",
+            popupHTML: "<p href=''>Tia's Taco Hut: my favourite breakfast for machacado and carne guisada</p>"
+        },
+        brasaoInfo = {
+            address: "19210 W I-10, San Antonio, TX 78257",
+            popupHTML: "<p>Brasão Brazilian Steakhouse: meat feast</p>"
+        },
+        pashaInfo = {
+            address: "9339 Wurzbach Rd, San Antonio, TX 78240",
+            popupHTML: "<p>Pasha Mediterranean Grill: Middle Eastern favourite with its own bakery in the same strip</p>"
+        },
+        crabInfo = {
+            address: "8910 Bandera Rd #305, San Antonio, TX 78250",
+            popupHTML: "<p>Smashin' Crab: seafood and Cajun cuisine</p>"
+        },
+        nachoInfo = {
+            address: "24145 W Interstate 10 Frontage Rd, San Antonio, TX 78257",
+            popupHTML: "<p>Papa Nacho's</p>"
+        },
         tequilaInfo = {
             address: "10910 Marbach Rd #101, San Antonio, TX 78245",
             popupHTML: "<p>El Tequila</p>"
@@ -77,6 +83,139 @@
             popupHTML: "<p>Pollos Asados Los Nortenos</p>"
         },
     ]
+    let accessToken = myMapBoxToken;
+
+    mapboxgl.accessToken = accessToken;
+
+    let map = new mapboxgl.Map({
+        container: 'map',
+        style: 'mapbox://styles/mapbox/streets-v11',
+        zoom: 10,
+        center: [-98.4916, 29.4252],
+        pitch: 45
+    });
+    map.addControl(
+        new mapboxgl.GeolocateControl({
+            positionOptions: {
+                enableHighAccuracy: true
+            },
+// When active the map will receive updates to the device's location as it changes.
+            trackUserLocation: true,
+// Draw an arrow next to the location dot to indicate which direction the device is heading.
+            showUserHeading: true
+        }),
+        'top-right'
+    );
+    map.addControl(
+        new MapboxGeocoder({
+            accessToken: mapboxgl.accessToken,
+            marker: {
+                color: 'orange'
+            },
+            mapboxgl: mapboxgl
+        }),
+        'top-left'
+    );
+    map.addControl(new mapboxgl.NavigationControl());
+    map.addControl(
+        new MapboxDirections({
+            accessToken: mapboxgl.accessToken
+        }),
+        'top-left'
+    );
+
+    // pixels the map pans when the up or down arrow is clicked
+    const deltaDistance = 100;
+
+    // degrees the map rotates when the left or right arrow is clicked
+    const deltaDegrees = 25;
+
+    function easing(t) {
+        return t * (2 - t);
+    }
+
+    map.on('load', () => {
+        map.getCanvas().focus();
+        map.getCanvas().addEventListener(
+            'keydown',
+            (e) => {
+                e.preventDefault();
+                if (e.which === 38) {
+// up
+                    map.panBy([0, -deltaDistance], {
+                        easing: easing
+                    });
+                } else if (e.which === 40) {
+// down
+                    map.panBy([0, deltaDistance], {
+                        easing: easing
+                    });
+                } else if (e.which === 37) {
+// left
+                    map.easeTo({
+                        bearing: map.getBearing() - deltaDegrees,
+                        easing: easing
+                    });
+                } else if (e.which === 39) {
+// right
+                    map.easeTo({
+                        bearing: map.getBearing() + deltaDegrees,
+                        easing: easing
+                    });
+                }
+            },
+            true
+        );
+        // Insert the layer beneath any symbol layer.
+        const layers = map.getStyle().layers;
+        const labelLayerId = layers.find(
+            (layer) => layer.type === 'symbol' && layer.layout['text-field']
+        ).id;
+
+// The 'building' layer in the Mapbox Streets
+// vector tileset contains building height data
+// from OpenStreetMap.
+        map.addLayer(
+            {
+                'id': 'add-3d-buildings',
+                'source': 'composite',
+                'source-layer': 'building',
+                'filter': ['==', 'extrude', 'true'],
+                'type': 'fill-extrusion',
+                'minzoom': 10,
+                'paint': {
+                    'fill-extrusion-color': '#aaa',
+
+// Use an 'interpolate' expression to
+// add a smooth transition effect to
+// the buildings as the user zooms in.
+                    'fill-extrusion-height': [
+                        'interpolate',
+                        ['linear'],
+                        ['zoom'],
+                        10,
+                        0,
+                        15,
+                        ['get', 'height']
+                    ],
+                    'fill-extrusion-base': [
+                        'interpolate',
+                        ['linear'],
+                        ['zoom'],
+                        10,
+                        0,
+                        15,
+                        ['get', 'min_height']
+                    ],
+                    'fill-extrusion-opacity': 0.6
+                }
+            },
+            labelLayerId
+        );
+    });
+
+
+
 
     function placeMarkerAndPopup(info, token, map) {
         geocode(info.address, token).then(function(coordinates) {
@@ -87,14 +226,63 @@
                 .addTo(map)
                 .setPopup(popup);
             // popup.addTo(map); to remove until clicked
-            marker.addTo(map);
+                marker.addTo(map);
         });
     }
     (function placeRestaurants() {
         restaurants.forEach(restaurant => placeMarkerAndPopup(restaurant, accessToken, map));
     })();
+    // recenters map on click
+    map.on('draw.create', function (e) {
+        if (e.features.length && e.features[0].geometry.type === 'Point') {
+            map.flyTo({center: e.features[0].geometry.coordinates});
+        }
+    })
 
 
+
+
+    // Functions copied from Casey
+    // function setMapClickEvent(marker) {
+    //     map.on('click', function(e){
+    //         console.log(e.lngLat);
+    //         marker.setLngLat(e.lngLat);
+    //         getReverseGeocode(e.lngLat, marker);
+    //     });
+    // }
+    // function getPopup(textDetails) {
+    //     return new mapboxgl.Popup()
+    //         .setHTML(`<p>${textDetails}</p>`)
+    //         .addTo(map);
+    // }
+    //
+    // function getGeocoder() {
+    //     return new MapboxGeocoder({
+    //         accessToken: myMapBoxToken,
+    //         mapboxgl: mapboxgl,
+    //         marker:false
+    //     })
+    // }
+    //
+    // function getMap(){
+    //     return new mapboxgl.Map( {
+    //         container: 'map',
+    //         style: 'mapbox://styles/mapbox/dark-v10',
+    //         center: [-98.4916, 29.4252],
+    //         zoom: 10
+    //     });
+    // }
+    //
+    // function initMapbox() {
+    //     mapboxgl.accessToken = myMapBoxToken;
+    //     map = getMap();
+    //     let marker = setMarker([-98.4916, 29.4252]);
+    //     setMapClickEvent(marker);
+    //     map.addControl(getGeocoder())
+    // }
+    //
+
+    // }
 
 </script>
 </body>
