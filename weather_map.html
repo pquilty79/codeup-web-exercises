@@ -18,17 +18,12 @@
 
 </head>
 <body>
-<div class="flex-container">
-    <header class="d-flex flex-wrap justify-content-center py-3">
-        <a href="" class="d-flex align-items-center pt-1 mt-2 mb-0 text-dark text-decoration-none">
-            <h1>Weather</h1>
-        </a>
-    </header>
-</div>
+
+<div class="page-content page-container" id="page_content"></div>
 <!-- The HTML element that serves as the Mapbox container -->
 <div id='map'></div>
 <div id="menu">
-    <input id="satellite-v9" type="radio" name="rtoggle" value="satellite" checked="checked">
+    <input id="satellite-v9" type="radio" name="rtoggle" value="satellite">
     <label for="satellite-v9">satellite</label>
     <input id="streets-v11" type="radio" name="rtoggle" value="streets">
     <label for="streets-v11">streets</label>
@@ -36,17 +31,9 @@
     <label for="light-v10">light</label>
     <input id="dark-v10" type="radio" name="rtoggle" value="dark">
     <label for="dark-v10">dark</label>
-    <input id="outdoors-v11" type="radio" name="rtoggle" value="outdoors">
+    <input id="outdoors-v11" type="radio" name="rtoggle" value="outdoors" checked="checked">
     <label for="outdoors-v11">outdoors</label>
 </div>
-<div class="page-content page-container" id="page_content">
-</div>
-
-
-
-
-
-
 
 
 <script src="https://code.jquery.com/jquery-2.2.4.min.js" integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=" crossorigin="anonymous"></script>
