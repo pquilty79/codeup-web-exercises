@@ -48,6 +48,7 @@ console.log(addresses)
 //4
 let sumOfYears = users.map(users => users.yearsOfExperience).reduce((prev, next) => prev + next);
 console.log(sumOfYears / users.length)
+
 //5 Use .reduce to get the longest email from the list of users
 let longestEmail = addresses.reduce((longest, current) => {
     return current.length > longest.length ? current: longest;
@@ -61,8 +62,8 @@ let userNames = users.map(function(users, name) {
 console.log('Your instructors are: ' + userNames.reduce(((prev, next) => prev + ', ' + next)) + '.')
 console.log(`Your instructors are : ${userNames.reduce(((prev, next) => prev + ', ' + next))}.`)
 //7 bonus
-let allLanguages = users[0].languages.concat(users[1].languages, users[2].languages, users[3].languages, users[4].languages)
-let unique = [...new Set(allLanguages)]
-console.log(unique)
 
-
+let uniqueLangs = users.reduce((languages, user) => {
+    return [...new Set(languages.concat(user.languages))];
+},[]);
+console.log(uniqueLangs)
