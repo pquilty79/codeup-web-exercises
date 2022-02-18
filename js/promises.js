@@ -23,4 +23,12 @@ function convertDate (date_to_convert_str) {
         return date_to_convert.toString();
     }
 
+function wait(number) {
+    return new Promise((resolve, reject) => {
+        setTimeout(() =>{
+            resolve()
+        }, number)
+    })
+}
+wait(10000).then(() => console.log(`You\'ll see this in ${10000/1000} seconds`));
 
