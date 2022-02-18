@@ -1,0 +1,40 @@
+body, html {
+    height: 100%;
+    width: 100%;
+    padding: 0;
+    margin: 0;
+    font-family: Arial, Ubuntu, sans-serif;
+}
+
+/*Use the following naming convention for the variables bg-info, text-info, bg-success, text-success*/
+
+.message {
+    margin: auto auto .6em;
+    border: 1px solid lightgray;
+    padding-top: 8px;
+    padding-left: 8px;
+    padding-bottom: 8px;
+    width: 94%;
+    border-radius: 5px;
+    font-size: 16px;
+}
+
+.message-info {
+    background-color: rgb(209,222,252);
+    color: rgb(57,49,144);
+}
+
+.message-success {
+    background-color: rgb(214,242,220);
+    color: rgb(56,113,68);
+}
+
+.message-warning {
+    background-color: rgb(252,251,206);
+    color: rgb(143,128,52);
+}
+
+.message-error {
+    background-color: rgb(244,212,215);
+    color: rgb(122,38,54);
+}

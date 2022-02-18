@@ -1,0 +1,268 @@
+
+:root{
+    --red: #E6563B;
+    --green: #7CB06C;
+    --yellow: #EB9D3A;
+    --blue: #00ABA9;
+    --background: #f0f0f0;
+    --borderColor: #e6e6e6;
+}
+.design {background-color: var(--red) ;
+}
+
+.develop {
+    background-color: var(--yellow);
+}
+
+.support {
+    background-color: var(--green);
+}
+
+.host {
+    background-color: var(--blue);
+}
+a{
+    color: black;
+}
+h1, h2, h3, h4, h5 {
+    font-family: "Anton", sans-serif;
+}
+.icons {
+    height: 18px;
+    width: 18px;
+}
+
+.logo {
+    height: 105px;
+    width: 105px;
+    z-index: 1;
+}
+
+body{
+    background-color: var(--background);
+    font-family: "Abel", sans-serif ;
+    font-size: 15px;
+    position: relative;
+}
+
+.image-borders {
+    background-color: var(--borderColor);
+}
+
+h1 {
+    font-size: 64px;
+    font-weight: bolder;
+
+}
+
+h2 {
+    font-size: 48px;
+    font-weight: bolder;
+
+}
+
+h3 {
+    font-size: 40px;
+    font-weight: bolder;
+}
+
+h4 {
+    font-size: 32px;
+    font-weight: bold;
+}
+
+h5 {
+    font-size: 22px;
+    font-weight: bold;
+    margin-top: 3px;
+}
+.topRow {
+    border-top-color: var(--borderColor);
+    border-top-width: 4em;
+    margin-top: 0;
+    width: 100%;
+    left: 0;
+    right: 0;
+}
+
+.codeup-design {
+    font-size: 28px;
+}
+
+.big-circle {
+    height: 105px;
+    width: 105px;
+    border-radius: 50%;
+    border: 5px solid white;
+    color: white;
+    font-family: 'Anton', sans-serif;
+}
+
+.small-circle{
+    height: 18px;
+    width: 18px;
+    border-radius: 50%;
+    text-align: center;
+    font-weight: bolder;
+    padding-top: 9px;
+    padding-left: 1px;
+    font-size: 8px;
+    line-height: 1px;
+    font-family: 'Anton', sans-serif;
+    margin-left: 1em;
+
+}
+
+.circle-text {
+    padding-top: 35px;
+    font-size: 18px;
+}
+
+
+ul {
+    justify-content: center;
+    list-style: none;
+}
+
+hr {
+    display: none;
+}
+
+.featured {
+    justify-content: center;
+}
+
+.last {
+    display: none;
+}
+
+.card-footer {
+    margin-bottom: 0;
+    background-color: var(--background);
+    padding-left: 0;
+    padding-right: 0;
+    border-style: none;
+}
+.card {
+    border-style: none;
+    border-color: var(--background);
+    display: none;
+}
+.card-img-top {
+    border: 5px solid var(--borderColor);
+}
+
+.secondCard {
+    display: none;
+}
+
+.secondColumn {
+    display: none;
+}
+.thirdColumn {
+    display: none;
+}
+
+.lastimages {
+    height: 56px;
+    width: 56px;
+    border: 5px solid var(--borderColor);
+    margin-right: 10px;
+}
+.small-cards {
+    background-color: var(--background);
+    border-style: none;
+    flex-direction: row;
+    margin-bottom: 35px;
+}
+.twitter {
+    height: 30px;
+    width: 30px;
+    margin-right: 10px;
+}
+.twitter-card {
+    background-color: var(--background);
+    border-style: none;
+    flex-direction: row;
+    width: 100%;
+}
+
+.whitebar {
+    position: absolute;
+    height: 60px;
+    background-color: #FFFFFF;
+    width: 100%;
+    top: 42px;
+}
+
+
+
+@media screen and (min-width: 576px) {
+    .card {
+        display: flex;
+    }
+    .secondColumn {
+        display: inline-block;
+    }
+    .nav-item {
+        margin-top: 38px;
+    }
+    .carousel {
+        display: none;
+    }
+
+}
+
+
+@media screen and (min-width: 768px) {
+    ul {
+        justify-content: space-between;
+        align-items: start;
+    }
+    .mt-sm-5 {
+        margin-top: 2.3rem!important;
+    }
+    .firstbreak {
+        margin-left: 4rem;
+    }
+    .big-circle-container {
+        justify-content: space-around!important;
+        width: 70%;
+        margin: auto;
+    }
+    hr {
+        display: inline-block;
+        height: 2px;
+    }
+
+    .featured {
+        justify-content: flex-start;
+
+    }
+
+    .last {
+        display: flex;
+        justify-content: flex-start;
+    }
+
+    .thirdColumn {
+        display: inline-block;
+    }
+
+    h5 {
+        font-size: 1.5vw;
+        padding-top: 7px;
+    }
+
+
+
+}
+@media screen and (min-width: 992px) {
+    .firstbreak {
+        margin-left: 0;
+    }
+    h5 {
+        font-size: 22px;
+        padding-top: 1px;
+    }
+}

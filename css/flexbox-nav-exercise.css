@@ -1,0 +1,53 @@
+* {
+    box-sizing: border-box;
+}
+body {
+    margin: 0;
+}
+nav {
+    background: rgb(193, 193, 193);
+    display: flex;
+}
+
+ul {
+    list-style: none;
+    align-items: center;
+    margin-left: .5em;
+    margin-right: .5em;
+    padding-left: 0;
+    display: flex;
+    font-family: Work Sans, sans-serif;
+}
+
+li {
+    padding-left: 1em;
+}
+
+
+nav a {
+    text-decoration: none;
+    color: black;
+    display: inline-block;
+    font-weight: bolder;
+}
+nav a:hover {
+    color: blue;
+}
+
+
+h1 {
+    font-family: Montserrat, sans-serif;
+    font-size: 3em;
+    padding-top: .2em;
+    padding-bottom: .2em;
+    margin: auto;
+}
+
+img {
+    height: 20px;
+    width: 20px;
+}
+
+nav img:hover {
+    color: blue;
+}

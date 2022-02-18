@@ -1,0 +1,23 @@
+Irvin Ruiz
+
+What draws you to coding and web development as a career?
+Benefits of the job: remote work and good hours. Want too implement ideas in rl: has an order system idea to make shopping easier 
+
+What are your greatest strengths? Weaknesses?
+Str: problem solving & attention to detail. He previosuly coded in Python to create database models
+Wks: Remembering syntax. 
+
+How has your background helped prepare you for web development (technical and non-technical)?
+Learned HTML and CSS in high school. Good at dealing wiht logic and solving problems
+Project managements skills from your father's contracting business
+
+Describe your dream job in web development.
+Enjoys using React - front end dev. Enjoys working on user interface and making things seemless
+
+What technologies interest you, web development/coding-related, and otherwise?
+React.Django. Java for back end.Cloud architecture.AI, Quantum computers
+
+What online resources do you use to to get the latest info/news on technology?
+Facebook groups that are coding related. Google news
+
+

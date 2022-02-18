@@ -1,0 +1,376 @@
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>First Mapbox Map</title>
+    <!-- Mapbox CSS -->
+    <link href='https://api.tiles.mapbox.com/mapbox-gl-js/v0.53.0/mapbox-gl.css' rel='stylesheet' />
+    <link href="https://api.mapbox.com/mapbox-gl-js/v2.7.0/mapbox-gl.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-2.2.4.min.js" integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"
+            integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy"
+            crossOrigin="anonymous"></script>
+    <script src="https://api.mapbox.com/mapbox-gl-js/plugins/mapbox-gl-geocoder/v4.7.2/mapbox-gl-geocoder.min.js"></script>
+    <script src="https://api.mapbox.com/mapbox-gl-js/v2.7.0/mapbox-gl.js"></script>
+    <link rel="stylesheet" href="https://api.mapbox.com/mapbox-gl-js/plugins/mapbox-gl-geocoder/v4.7.2/mapbox-gl-geocoder.css" type="text/css">
+    <script src="https://api.mapbox.com/mapbox-gl-js/plugins/mapbox-gl-directions/v4.1.0/mapbox-gl-directions.js"></script>
+    <link rel="stylesheet" href="https://api.mapbox.com/mapbox-gl-js/plugins/mapbox-gl-directions/v4.1.0/mapbox-gl-directions.css" type="text/css">
+    <style>
+        #map {
+            /* the width and height may be set to any size */
+            width: 100%;
+            height: 700px;
+        }
+        #map > div.mapboxgl-control-container > div.mapboxgl-ctrl-top-left > div.mapboxgl-ctrl-geocoder.mapboxgl-ctrl > input {
+            margin-left: 30px;
+            width: 300px;
+        }
+        #map > div.mapboxgl-control-container > div.mapboxgl-ctrl-top-left > div.mapboxgl-ctrl-directions.mapboxgl-ctrl > div.directions-control.directions-control-inputs > div > div.mapbox-directions-profile.mapbox-directions-component-keyline.mapbox-directions-clearfix {
+            padding-top: 9px;
+            margin-bottom: 4px;
+            border-radius: 5px;
+        }
+        #map > div.mapboxgl-control-container > div.mapboxgl-ctrl-top-left > div.mapboxgl-ctrl-geocoder.mapboxgl-ctrl {
+            border: 2px solid lightgray;
+            border-radius: 5px;
+        }
+        #menu {
+             position: absolute;
+             background: cornflowerblue;
+             padding: 10px;
+             font-family: 'Open Sans', sans-serif;
+             width: 100%;
+             height: 5em;
+        }
+        label {
+            padding-right: 1em;
+            color: white
+        }
+        .flex-container{
+            background-color: cornflowerblue;
+        }
+        h1 {
+            color: white;
+            text-shadow: 2px 2px rgba(211, 211, 211, 0.5);
+        }
+
+
+    </style>
+</head>
+<body>
+<div class="flex-container">
+    <header class="d-flex flex-wrap justify-content-center py-3">
+        <a href="" class="d-flex align-items-center pt-1 mt-2 mb-0 text-dark text-decoration-none">
+            <h1 >My Favourite Eats</h1>
+        </a>
+    </header>
+</div>
+
+<!-- The HTML element that serves as the Mapbox container -->
+<div id='map'></div>
+<div id="menu">
+    <input id="streets-v11" type="radio" name="rtoggle" value="streets" checked="checked">
+    <label for="streets-v11">streets</label>
+    <input id="satellite-v9" type="radio" name="rtoggle" value="satellite">
+    <label for="satellite-v9">satellite</label>
+    <input id="light-v10" type="radio" name="rtoggle" value="light">
+    <label for="light-v10">light</label>
+    <input id="dark-v10" type="radio" name="rtoggle" value="dark">
+    <label for="dark-v10">dark</label>
+    <input id="outdoors-v11" type="radio" name="rtoggle" value="outdoors">
+    <label for="outdoors-v11">outdoors</label>
+</div>
+
+
+<!-- Mapbox JS -->
+<script src='https://api.tiles.mapbox.com/mapbox-gl-js/v0.53.0/mapbox-gl.js'></script>
+<script src="js/mapbox-geocoder-utils.js"></script>
+<script src="js/keys.js"></script>
+
+<!-- Custom JS -->
+<script>
+    let restaurants = [
+        tiasInfo = {
+            address: "6820 Huebner Rd, Leon Valley, TX 78238",
+            popupHTML: `<div className="card" style="width: 18rem;">
+                <img className="card-img-top" src="https://media-cdn.tripadvisor.com/media/photo-l/0a/7b/01/ad/carne-guisada-plate.jpg" alt="Card image cap" style="width: 17.5rem; height: 15rem;">
+                    <div className="card-body">
+                        <h5 className="card-title">Tia's Taco Hut</h5>
+                        <p> My favourite machacado and carne guisada</p>
+                        <a href="https://www.tiastacohuttx.com/" className="btn btn-primary">Visit website</a>
+                    </div>
+            </div>`
+        },
+        brasaoInfo = {
+            address: "19210 W I-10, San Antonio, TX 78257",
+            popupHTML: `<div className="card" style="width: 18rem;">
+                <img className="card-img-top" src="https://images.squarespace-cdn.com/content/v1/60a7361067fec93537b3c527/f2fa624e-eda7-43bf-8b31-4d6384a95d16/picanha4.jpeg?format=1500w" alt="Card image cap" style="width: 17.5rem; height: 20rem;">
+                    <div className="card-body">
+                        <h5 className="card-title">Brasão Brazilian Steakhouse</h5>
+                        <p> Meat feast!</p>
+                        <a href="https://www.brasaousa.com/" className="btn btn-primary">Visit website</a>
+                    </div>
+            </div>`
+        },
+        pashaInfo = {
+            address: "9339 Wurzbach Rd, San Antonio, TX 78240",
+            popupHTML: `<div className="card" style="width: 18rem;">
+                <img className="card-img-top" src="data:image/jpeg;base64,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" alt="Card image cap" style="width: 17.5rem">
+                    <div className="card-body">
+                        <h5 className="card-title">Pasha Mediterranean Grill</h5>
+                        <p> Great Middle Eastern fare with its own bakery in the same strip</p>
+                        <a href="https://gopasha.com/" className="btn btn-primary">Visit website</a>
+                    </div>
+            </div>`
+        },
+        crabInfo = {
+            address: "8910 Bandera Rd #305, San Antonio, TX 78250",
+            popupHTML: `<div className="card" style="width: 18rem;">
+                <img className="card-img-top" src="https://www.smashincrab.com/media/3hnh5bux/menu_specialties.jpg" alt="Card image cap" style="width: 17.5rem">
+                    <div className="card-body">
+                        <h5 className="card-title">Smashin Crab</h5>
+                        <p> Cajun cuisine and seafood</p>
+                        <a href="https://www.smashincrab.com/" className="btn btn-primary">Visit website</a>
+                    </div>
+            </div>`
+        },
+        nachoInfo = {
+            address: "24145 W Interstate 10 Frontage Rd, San Antonio, TX 78257",
+            popupHTML: `<div className="card" style="width: 18rem;">
+                <img className="card-img-top" src="https://static.wixstatic.com/media/351e588c1e7348e98afa885da2b57d85.jpg/v1/fill/w_3424,h_1012,al_c,q_90,usm_0.66_1.00_0.01/351e588c1e7348e98afa885da2b57d85.webp" alt="Card image cap" style="width: 17.5rem">
+                    <div className="card-body">
+                        <h5 className="card-title">Papa Nachos</h5>
+                        <p> Awesome nachos, seafood, and margaritas</p>
+                        <a href="https://www.papanachoscantinasa.com/" className="btn btn-primary">Visit website</a>
+                    </div>
+            </div>`
+        },
+        tequilaInfo = {
+            address: "10910 Marbach Rd #101, San Antonio, TX 78245",
+            popupHTML: `<div className="card" style="width: 18rem;">
+                <img className="card-img-top" src="https://static.wixstatic.com/media/0f9010_8a348774cdd74234843dda67eee616f5~mv2.png/v1/fit/w_516,h_1410,q_90/0f9010_8a348774cdd74234843dda67eee616f5~mv2.webp" alt="Card image cap" style="width: 17.5rem">
+                    <div className="card-body">
+                        <h5 className="card-title">El Tequila</h5>
+                        <p> Best carne asada!</p>
+                        <a href="https://www.eltequilamexicanbar.com/" className="btn btn-primary">Visit website</a>
+                    </div>
+            </div>`
+        },
+        pizzaInfo = {
+            address: "6989 Blanco Rd, San Antonio, TX 78216",
+            popupHTML: `<div className="card" style="width: 18rem;">
+                <img className="card-img-top" src="https://media-cdn.tripadvisor.com/media/photo-s/07/af/35/60/dough-pizzeria-napoletana.jpg" alt="Card image cap" style="width: 17.5rem; height: 18rem;">
+                    <div className="card-body">
+                        <h5 className="card-title">Dough Pizzeria Napoletana</h5>
+                        <p> Authentic Italian Pizza. As seen on the Food Network!</p>
+                        <a href="http://www.doughpizzeria.com/" className="btn btn-primary">Visit website</a>
+                    </div>
+            </div>`
+        },
+        indiaInfo = {
+            address: "1031 Patricia #106, San Antonio, TX 78213",
+            popupHTML: `<div className="card" style="width: 18rem;">
+                <img className="card-img-top" src="https://lirp.cdn-website.com/b9dd570d/dms3rep/multi/opt/home01-320x240-384w.jpg" alt="Card image cap" style="width: 17.5rem">
+                    <div className="card-body">
+                        <h5 className="card-title">India Oven</h5>
+                        <p> Best Indian Food in SA</p>
+                        <a href="https://www.indiaovensa.com/" className="btn btn-primary">Visit website</a>
+                    </div>
+            </div>`
+        },
+        polloInfo = {
+            address: "4642 Rigsby Ave, San Antonio, TX 78222",
+            popupHTML:  `<div className="card" style="width: 18rem;">
+                <img className="card-img-top" src="https://polloslosnortenos.com/spillover/emailer2020/img/polloslosnortenos/updatedLocationspic.jpg" alt="Card image cap" style="width: 17.5rem">
+                    <div className="card-body">
+                        <h5 className="card-title">Pollos Asados los Norteños</h5>
+                        <p> You have to already know this place if you live in SA</p>
+                        <a href="https://polloslosnortenos.com/index.htm" className="btn btn-primary">Visit website</a>
+                    </div>
+            </div>`
+        },
+        wingsInfo = {
+            address: "4553 N Loop 1604 W, San Antonio, TX 78249",
+            popupHTML: `<div className="card" style="width: 18rem;">
+                <img className="card-img-top" src="https://anchorbar.com/wp-content/uploads/2019/10/tx-slider-8-large.jpg" alt="Card image cap" style="width: 17.5rem">
+                    <div className="card-body">
+                        <h5 className="card-title">Anchor Wing Bar</h5>
+                        <p> From the original makers of the Buffalo wing</p>
+                        <a href="https://anchorbar.com/locations/san-antonio-tx/" className="btn btn-primary">Visit website</a>
+                    </div>
+            </div>`
+        }
+    ]
+    let accessToken = myMapBoxToken;
+
+    mapboxgl.accessToken = accessToken;
+
+    let map = new mapboxgl.Map({
+        container: 'map',
+        style: 'mapbox://styles/mapbox/streets-v11',
+        zoom: 10,
+        center: [-98.4916, 29.4252],
+        pitch: 55
+    });
+    map.addControl(
+        new mapboxgl.GeolocateControl({
+            positionOptions: {
+                enableHighAccuracy: true
+            },
+// When active the map will receive updates to the device's location as it changes.
+            trackUserLocation: true,
+// Draw an arrow next to the location dot to indicate which direction the device is heading.
+            showUserHeading: true
+        }),
+        'top-right'
+    );
+    map.addControl(
+        new MapboxGeocoder({
+            accessToken: mapboxgl.accessToken,
+            marker: {
+                color: 'orange'
+            },
+            mapboxgl: mapboxgl
+        }),
+        'top-left'
+    );
+    map.addControl(new mapboxgl.NavigationControl());
+    map.addControl(
+        new MapboxDirections({
+            accessToken: mapboxgl.accessToken
+        }),
+        'top-left'
+    );
+
+    // pixels the map pans when the up or down arrow is clicked
+    const deltaDistance = 100;
+
+    // degrees the map rotates when the left or right arrow is clicked
+    const deltaDegrees = 25;
+
+    function easing(t) {
+        return t * (2 - t);
+    }
+
+    map.on('load', () => {
+        // add functionality to select style menu
+        const layerList = document.getElementById('menu');
+        const inputs = layerList.getElementsByTagName('input');
+        // Insert the layer beneath any symbol layer.
+        const layers = map.getStyle().layers;
+        const labelLayerId = layers.find(
+            (layer) => layer.type === 'symbol' && layer.layout['text-field']
+        ).id;
+
+        // add arrow key functionality
+        map.getCanvas().focus();
+        map.getCanvas().addEventListener(
+            'keydown',
+            (e) => {
+                e.preventDefault();
+                if (e.which === 38) {
+// up
+                    map.panBy([0, -deltaDistance], {
+                        easing: easing
+                    });
+                } else if (e.which === 40) {
+// down
+                    map.panBy([0, deltaDistance], {
+                        easing: easing
+                    });
+                } else if (e.which === 37) {
+// left
+                    map.easeTo({
+                        bearing: map.getBearing() - deltaDegrees,
+                        easing: easing
+                    });
+                } else if (e.which === 39) {
+// right
+                    map.easeTo({
+                        bearing: map.getBearing() + deltaDegrees,
+                        easing: easing
+                    });
+                }
+            },
+            true
+        );
+
+// The 'building' layer in the Mapbox Streets
+// vector tileset contains building height data
+// from OpenStreetMap.
+        map.addLayer(
+            {
+                'id': 'add-3d-buildings',
+                'source': 'composite',
+                'source-layer': 'building',
+                'filter': ['==', 'extrude', 'true'],
+                'type': 'fill-extrusion',
+                'minzoom': 10,
+                'paint': {
+                    'fill-extrusion-color': '#aaa',
+
+// Use an 'interpolate' expression to
+// add a smooth transition effect to
+// the buildings as the user zooms in.
+                    'fill-extrusion-height': [
+                        'interpolate',
+                        ['linear'],
+                        ['zoom'],
+                        10,
+                        0,
+                        15,
+                        ['get', 'height']
+                    ],
+                    'fill-extrusion-base': [
+                        'interpolate',
+                        ['linear'],
+                        ['zoom'],
+                        10,
+                        0,
+                        15,
+                        ['get', 'min_height']
+                    ],
+                    'fill-extrusion-opacity': 0.6
+                }
+            },
+            labelLayerId
+        );
+        // change map type functionality
+        for (const input of inputs) {
+            input.onclick = (layer) => {
+                const layerId = layer.target.id;
+                map.setStyle('mapbox://styles/mapbox/' + layerId);
+
+            };
+        }
+    });
+
+
+
+
+    function placeMarkerAndPopup(info, token, map) {
+        geocode(info.address, token).then(function(coordinates) {
+            let popup = new mapboxgl.Popup()
+                .setHTML(info.popupHTML);
+            let marker = new mapboxgl.Marker()
+                .setLngLat(coordinates)
+                .addTo(map)
+                .setPopup(popup);
+                marker.addTo(map);
+                map.on('mouseenter', marker, (e) => {
+                    map.getCanvas().style.cursor = 'pointer';
+                })
+        });
+    }
+    (function placeRestaurants() {
+        restaurants.forEach(restaurant => placeMarkerAndPopup(restaurant, accessToken, map));
+    })();
+
+
+
+</script>
+</body>
+</html>

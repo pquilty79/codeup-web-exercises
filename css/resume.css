@@ -1,0 +1,20 @@
+.title, p {
+    margin-bottom: .25em;
+}
+
+hr {
+    border-top-width: 3px;
+}
+
+h3 {
+    margin-top: .75em;
+}
+
+h5 {
+    margin-top: .5em;
+}
+
+h1 {
+    margin-top: 2em;
+}
+
