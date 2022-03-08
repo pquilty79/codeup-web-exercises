@@ -2,6 +2,8 @@
 <project version="4">
   <component name="VcsDirectoryMappings">
     <mapping directory="" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/elixir-first-dom-assessment" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/elixir-second-dom-assessment" vcs="Git" />
     <mapping directory="$PROJECT_DIR$/../coffee-project" vcs="Git" />
     <mapping directory="$PROJECT_DIR$/../elixir-second-js-assessment" vcs="Git" />
   </component>

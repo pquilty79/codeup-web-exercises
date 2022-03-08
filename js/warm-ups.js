@@ -123,12 +123,12 @@
 // console.log(whichStringIsLonger("bobby", 2)); // returns false
 // console.log(whichStringIsLonger(1, "lou")); // returns false
 
-function convertLowHighToObject(array) {
-    array = array.sort()
-    return "low: " + array[0] + ", high: " + array[array.length - 1];
-}
-
-console.log(convertLowHighToObject([36, 87, 2]))
+// function convertLowHighToObject(array) {
+//     array = array.sort()
+//     return "low: " + array[0] + ", high: " + array[array.length - 1];
+// }
+//
+// console.log(convertLowHighToObject([36, 87, 2]))
 
 // function convertLowToObjectToo(x, y) {
 //     if (x>y) {
@@ -142,3 +142,112 @@ console.log(convertLowHighToObject([36, 87, 2]))
 //
 // console.log(convertLowToObjectToo(98, 2))
 // console.log(convertLowToObjectToo(75, 75))
+//
+// const isDivisibleBy3 = n => n % 3 === 0;
+//
+// const numbers = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
+//
+// console.log(numbers.filter(isDivisibleBy3));
+// console.log(numbers);
+
+// if (true) {
+//     let x = 5;
+// }
+// console.log(typeof x);
+
+// function sayHello(name) {
+//     return 'Hello, ' + name + '!';
+// }
+// const sayHello = (name) => { 'Hello, ' + name + '!' }
+// const sayHello = name => { 'Hello, ' + name + '!' }
+// const sayHello = (name) => `Hello, ${name}!`
+// console.log(sayHello("Patrick"));
+
+
+    //function to print occurrence of character
+    // function printans( ans )
+    // {
+    //     for( let [ key ,value] of ans)
+    // {
+    //
+    //     console.log(`${key} occurs ${value} times` );
+    //
+    // }
+    //
+    // }
+
+    // function count occurrence of character
+    // function count( str , outp_map )
+    // {
+    //     for( let i = 0 ;i < str.length ;i++)
+    // {
+    //
+    //     let k = outp_map.get(str[i]);
+    //     outp_map.set(str[i], k+1) ;
+    //
+    //
+    // }
+//calling print function
+//         printans(outp_map);
+//     }
+
+    //function create map to count character
+//     function countDuplicates( test , callback )
+//     {
+// //checking string is valid or not
+//         if( test.length === 0 )
+//     {
+//         console.log(" empty string ");
+//         return ;
+//     }
+//         else
+//     {
+//         // map for storing count values
+//         let ans = new Map();
+//         for( let i = 0 ;i < test.length;i++)
+//     {
+//         ans.set(test[i], 0);
+//     }
+//
+//         callback( test ,ans);
+//
+//     }
+//
+//     }
+
+    // test string
+//     let test = "helloworld";
+// countDuplicates( test ,count);
+//
+// function duplicatesCounted(str) {
+//     let letterCountObject = {};
+//     let count = 1;
+//     for (let i = 0; i < str.length; i++) {
+//         if (!(str[i] in letterCountObject)) {
+//             letterCountObject[str[i]] = count;
+//         } else {
+//             letterCountObject[str[i]] = letterCountObject[str[i]] + 1;
+//         }
+//     }
+//     return letterCountObject
+// }
+//
+// console.log(duplicatesCounted('hello world'))
+
+function makePerson(personName, age) {
+   if (personName.length >= 1) {
+       if (age > 150 || age < 1) {
+           console.log("Person must be between the age of 1 and 150");
+           return false;
+       } else {
+           return {personName: personName, age: age};
+       }
+   } else {
+       console.log("Person name must be at least 1 letter long")
+       return false;
+   }
+}
+
+console.log(makePerson("Bob", 30))
+console.log(makePerson("", 75))
+console.log(makePerson("John", 151))
